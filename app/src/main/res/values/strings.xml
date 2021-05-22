@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">Novia</string>
-    <string name="title_activity_main1">MainActivity1</string>
+    <string name="title_activity_main">Novia</string>
     <string name="title_home">Beranda</string>
     <string name="title_notifications">Notifications</string>
     <string name="sos_button">SOS button</string>
     <string name="chat_aduan">Chat aduan</string>
     <string name="sos">SOS</string>
+    <string name="novia_logo">Novia Logo</string>
+    <string name="settings">Pengaturan</string>
+    <string name="user_profile_picture">User profile picture</string>
+    <string name="yudi_iswara">Yudi Iswara</string>
+    <string name="yudiiswara_gmail_com">yudiiswara@gmail.com</string>
+    <string name="back_button">Back button</string>
 </resources>
