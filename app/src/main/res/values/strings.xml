@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Novia</string>
+    <string name="title_activity_main1">MainActivity1</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="sos_button">SOS button</string>
+    <string name="chat_aduan">Chat aduan</string>
+    <string name="sos">SOS</string>
 </resources>
