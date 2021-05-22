@@ -56,21 +56,15 @@ class MainActivity : AppCompatActivity() {
         if (this) {
             binding.fabSos.visibility = View.GONE
             binding.navView.visibility = View.GONE
-            binding.mainChatBtnBack.visibility = View.VISIBLE
-            binding.mainChatNoviaDesc.visibility = View.VISIBLE
-            binding.mainChatNoviaName.visibility = View.VISIBLE
-            binding.mainChatNoviaPic.visibility = View.VISIBLE
             binding.appLogo.visibility = View.GONE
             binding.btnSettings.visibility = View.GONE
+            binding.mainChatLayout.visibility = View.VISIBLE
         } else {
             binding.fabSos.visibility = View.VISIBLE
             binding.navView.visibility = View.VISIBLE
-            binding.mainChatBtnBack.visibility = View.INVISIBLE
-            binding.mainChatNoviaDesc.visibility = View.GONE
-            binding.mainChatNoviaName.visibility = View.GONE
-            binding.mainChatNoviaPic.visibility = View.GONE
             binding.appLogo.visibility = View.VISIBLE
             binding.btnSettings.visibility = View.VISIBLE
+            binding.mainChatLayout.visibility = View.GONE
         }
     }
 }
