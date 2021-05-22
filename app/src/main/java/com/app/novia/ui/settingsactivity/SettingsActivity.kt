@@ -1,9 +1,7 @@
 package com.app.novia.ui.settingsactivity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.novia.R
-import com.app.novia.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.app.novia.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {

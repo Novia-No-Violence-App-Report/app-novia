@@ -51,18 +51,17 @@
     <!-- CHAT -->
 
     <ImageView
-        android:visibility="gone"
         android:id="@+id/main_chat_btn_back"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:contentDescription="@string/back_button"
         android:src="@drawable/ic_baseline_arrow_back_24"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/guideline_top"
         app:layout_constraintLeft_toLeftOf="@id/guideline_left"
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:visibility="gone"
         android:id="@+id/main_chat_novia_pic"
         android:layout_width="60dp"
         android:layout_height="0dp"
@@ -70,27 +69,28 @@
         android:layout_marginStart="16dp"
         android:maxWidth="60dp"
         android:src="@drawable/chat_logo"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/guideline_top"
         app:layout_constraintLeft_toRightOf="@id/main_chat_btn_back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/main_chat_novia_name"
         style="@style/Text.Header3"
-        android:text="@string/novia"
         android:layout_marginStart="10dp"
+        android:text="@string/novia"
+        android:visibility="gone"
         app:layout_constraintStart_toEndOf="@id/main_chat_novia_pic"
-        app:layout_constraintTop_toTopOf="@id/main_chat_novia_pic"/>
+        app:layout_constraintTop_toTopOf="@id/main_chat_novia_pic" />
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/main_chat_novia_desc"
         style="@style/Text.Paragraph"
-        android:text="@string/anda_terhubung_dengan_bot"
         android:layout_marginStart="10dp"
+        android:text="@string/anda_terhubung_dengan_bot"
+        android:visibility="gone"
         app:layout_constraintStart_toEndOf="@id/main_chat_novia_pic"
-        app:layout_constraintTop_toBottomOf="@id/main_chat_novia_name"/>
+        app:layout_constraintTop_toBottomOf="@id/main_chat_novia_name" />
 
     <!-- END CHAT -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
