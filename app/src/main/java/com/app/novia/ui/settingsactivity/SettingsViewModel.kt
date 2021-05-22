@@ -1,4 +1,3 @@
 package com.app.novia.ui.settingsactivity
 
-class SettingsViewModel {
-}
+class SettingsViewModel
