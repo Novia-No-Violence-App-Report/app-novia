@@ -3,7 +3,7 @@ package com.app.novia.ui.mainactivity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.app.novia.R
 import com.app.novia.databinding.ActivityMainBinding
@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        val navController = navHostFragment.navController
+
         navView.setupWithNavController(navController)
         binding.fabSos.setOnClickListener {
             navController.navigate(R.id.navigation_sos)

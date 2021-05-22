@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class SosViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
-        value = "This is SOS Fragment"
+        value = "Pilih opsi yang ingin segera dilakukan"
     }
     val text: LiveData<String> = _text
 }

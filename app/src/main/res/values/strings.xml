@@ -12,4 +12,14 @@
     <string name="yudi_iswara">Yudi Iswara</string>
     <string name="yudiiswara_gmail_com">yudiiswara@gmail.com</string>
     <string name="back_button">Back button</string>
+    <string name="halo_yudi">Halo, Yudi</string>
+    <string name="semoga_anda_sehat_selalu">Semoga anda sehat selalu</string>
+    <string name="tips_trik"><![CDATA[Tips & Trik]]></string>
+    <string name="preventif_apabila_mendapat_tindakan_asusila">Preventif apabila mendapat tindakan asusila</string>
+    <string name="berita">Berita</string>
+    <string name="layanan_sos">Layanan SOS</string>
+    <string name="pilih_opsi_yang_ingin_segera_dilakukan">Pilih opsi yang ingin segera dilakukan</string>
+    <string name="gawat_darurat">Gawat darurat</string>
+    <string name="kirim_sms_blast">Kirim SMS blast</string>
+    <string name="kontak_kerabat">Kontak kerabat</string>
 </resources>
