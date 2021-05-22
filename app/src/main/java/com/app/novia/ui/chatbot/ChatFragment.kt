@@ -11,7 +11,7 @@ import com.app.novia.databinding.FragmentChatbotBinding
 
 class ChatFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: ChatViewModel
+    private lateinit var chatViewModel: ChatViewModel
     private var _binding: FragmentChatbotBinding? = null
 
     // This property is only valid between onCreateView and
@@ -22,15 +22,15 @@ class ChatFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        notificationsViewModel =
+    ): View {
+        chatViewModel =
             ViewModelProvider(this).get(ChatViewModel::class.java)
 
         _binding = FragmentChatbotBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner, {
+        val textView: TextView = binding.textChatbot
+        chatViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         return root

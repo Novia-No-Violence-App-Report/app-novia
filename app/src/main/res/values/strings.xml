@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Novia</string>
+    <string name="novia">Novia</string>
     <string name="title_activity_main">Novia</string>
     <string name="title_home">Beranda</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_chatbot">Chat aduan</string>
     <string name="sos_button">SOS button</string>
     <string name="chat_aduan">Chat aduan</string>
     <string name="sos">SOS</string>
@@ -22,4 +22,5 @@
     <string name="gawat_darurat">Gawat darurat</string>
     <string name="kirim_sms_blast">Kirim SMS blast</string>
     <string name="kontak_kerabat">Kontak kerabat</string>
+    <string name="anda_terhubung_dengan_bot">Anda terhubung dengan bot</string>
 </resources>
