@@ -7,3 +7,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Novia"
 include ':app'
+include ':core'
