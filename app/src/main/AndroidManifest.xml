@@ -19,6 +19,9 @@
             android:name=".ui.contactlist.ContactListActivity"
             android:exported="true" />
         <activity
+            android:name=".ui.splash.SplashScreen"
+            android:exported="true" />
+        <activity
             android:name=".ui.settingsactivity.SettingsActivity"
             android:exported="true" />
         <activity

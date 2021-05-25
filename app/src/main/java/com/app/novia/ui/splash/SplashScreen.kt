@@ -1,4 +1,4 @@
-package com.app.novia.ui
+package com.app.novia.ui.splash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
