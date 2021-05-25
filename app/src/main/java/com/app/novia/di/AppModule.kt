@@ -2,6 +2,7 @@ package com.app.novia.di
 
 import com.app.novia.core.domain.usecase.NoviaInteractor
 import com.app.novia.core.domain.usecase.NoviaUseCase
+import com.app.novia.ui.chatbot.ChatViewModel
 import com.app.novia.ui.contactlist.ContactListViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -14,4 +15,5 @@ val useCaseModule = module {
 @DelicateCoroutinesApi
 val viewModelModule = module {
     viewModel { ContactListViewModel(get()) }
+    viewModel { ChatViewModel(get()) }
 }
