@@ -5,9 +5,10 @@ import com.app.novia.core.data.source.remote.RemoteDataSource
 import com.app.novia.core.domain.model.EmergencyContactEntity
 import com.app.novia.core.domain.repository.INoviaRepository
 import com.salomohutapea.movieapp.core.utils.AppExecutors
+import kotlinx.coroutines.flow.Flow
 
 class Repository(
-    private val remoteDataSource: RemoteDataSource,
+//    private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
 ) : INoviaRepository{
@@ -17,6 +18,10 @@ class Repository(
 
     override suspend fun deleteEmergencnyContact(contactEntity: EmergencyContactEntity) {
         localDataSource.deleteEmergencyContact(contactEntity)
+    }
+
+    override fun getEmergencyContacts(): Flow<List<EmergencyContactEntity>> {
+        return localDataSource.getAllEmergencyContact()
     }
 
 }

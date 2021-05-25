@@ -3,6 +3,8 @@
     package="com.app.novia">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:name=".MyApplication"
@@ -13,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Novia">
+        <activity
+            android:name=".ui.contactlist.ContactListActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.settingsactivity.SettingsActivity"
             android:exported="true" />

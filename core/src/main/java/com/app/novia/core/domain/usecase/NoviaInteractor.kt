@@ -2,6 +2,7 @@ package com.app.novia.core.domain.usecase
 
 import com.app.novia.core.domain.model.EmergencyContactEntity
 import com.app.novia.core.domain.repository.INoviaRepository
+import kotlinx.coroutines.flow.Flow
 
 class NoviaInteractor(private val repository: INoviaRepository) : NoviaUseCase {
     override suspend fun addEmergencyContact(contactEntity: EmergencyContactEntity) {
@@ -10,5 +11,9 @@ class NoviaInteractor(private val repository: INoviaRepository) : NoviaUseCase {
 
     override suspend fun deleteEmergencnyContact(contactEntity: EmergencyContactEntity) {
         repository.deleteEmergencnyContact(contactEntity)
+    }
+
+    override fun getEmergencyContacts(): Flow<List<EmergencyContactEntity>> {
+        return repository.getEmergencyContacts()
     }
 }

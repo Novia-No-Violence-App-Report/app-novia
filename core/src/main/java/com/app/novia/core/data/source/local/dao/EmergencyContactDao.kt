@@ -1,6 +1,5 @@
 package com.app.novia.core.data.source.local.dao
 
-import android.graphics.Movie
 import androidx.room.*
 import com.app.novia.core.domain.model.EmergencyContactEntity
 import kotlinx.coroutines.flow.Flow

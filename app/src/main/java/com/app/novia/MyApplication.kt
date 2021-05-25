@@ -22,7 +22,7 @@ class MyApplication : Application() {
             modules(
                 listOf(
                     databaseModule,
-                    networkModule,
+//                    networkModule,
                     repositoryModule,
                     useCaseModule,
                     viewModelModule
