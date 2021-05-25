@@ -73,17 +73,19 @@ class ChatFragment : Fragment() {
     private suspend fun sendChat(msg: String?) {
         val currentDate = SimpleDateFormat("hh:mm").format(Date())
         adapter?.addData(ChatEntity(msg, false, currentDate.toString()))
-        chatViewModel.sendChat(msg).observeOnce(viewLifecycleOwner, {
-            if (it != null) {
-                when (it) {
+        adapter?.itemCount?.minus(1)?.let { binding.rvChatbot.scrollToPosition(it) }
+        chatViewModel.sendChat(msg).observeOnce(viewLifecycleOwner, { response ->
+            if (response != null) {
+                when (response) {
                     is ApiResponse.Success -> {
                         Log.d("API RESPONSE", "SUCCESS SENDING CHAT")
-                        it.data.senderIsBot = true
-                        it.data.timeStamp = SimpleDateFormat("hh:mm").format(Date()).toString()
-                        adapter?.addData(it.data)
+                        response.data.senderIsBot = true
+                        response.data.timeStamp = SimpleDateFormat("hh:mm").format(Date()).toString()
+                        adapter?.addData(response.data)
+                        adapter?.itemCount?.minus(1)?.let { binding.rvChatbot.scrollToPosition(it) }
                     }
                     is ApiResponse.Empty -> Log.d("API RESPONSE", "EMPTY")
-                    is ApiResponse.Error -> Log.d("API RESPONSE", "ERROR ${it.errorMessage}")
+                    is ApiResponse.Error -> Log.d("API RESPONSE", "ERROR ${response.errorMessage}")
                 }
             }
         })
