@@ -1,4 +1,4 @@
-package com.salomohutapea.movieapp.core.utils
+package com.app.novia.core.utils
 
 import androidx.annotation.VisibleForTesting
 import java.util.concurrent.Executor

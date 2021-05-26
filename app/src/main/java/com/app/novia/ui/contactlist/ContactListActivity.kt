@@ -3,7 +3,6 @@ package com.app.novia.ui.contactlist
 import android.app.Dialog
 import android.os.Bundle
 import android.text.Editable
-import android.util.Log
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
@@ -16,7 +15,6 @@ import com.app.novia.core.ui.ContactListAdapter
 import com.app.novia.databinding.ActivityContactListBinding
 import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.w3c.dom.Text
 
 class ContactListActivity : AppCompatActivity() {
 

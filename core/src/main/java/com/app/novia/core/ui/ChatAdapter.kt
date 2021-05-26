@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.app.novia.core.R
 import com.app.novia.core.domain.model.ChatEntity
-import java.text.DateFormat
 
 
 class ChatAdapter(private val context: Context) :

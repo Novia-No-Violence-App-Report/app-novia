@@ -24,12 +24,6 @@ class ContactListAdapter : BaseSwipeAdapter() {
         this.onEditClickCallback = onEditClickCallback
     }
 
-    fun addData(contactEntity: EmergencyContactEntity?) {
-        if (contactEntity == null) return
-        listData.add(contactEntity)
-        notifyDataSetChanged()
-    }
-
     fun setData(listContact: ArrayList<EmergencyContactEntity>?) {
         if (listContact == null) return
         listData = listContact

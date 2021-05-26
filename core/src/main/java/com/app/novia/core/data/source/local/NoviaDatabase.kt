@@ -9,7 +9,6 @@ import com.app.novia.core.domain.model.EmergencyContactEntity
 @Database(
     entities = [EmergencyContactEntity::class], version = 1, exportSchema = false
 )
-@TypeConverters(Converters::class)
 
 abstract class NoviaDatabase : RoomDatabase() {
 
