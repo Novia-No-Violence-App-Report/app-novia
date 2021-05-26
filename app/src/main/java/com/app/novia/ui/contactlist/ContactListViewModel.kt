@@ -9,6 +9,9 @@ class ContactListViewModel constructor(private val useCase: NoviaUseCase) : View
     suspend fun addEmergencyContact(contactEntity: EmergencyContactEntity) =
         useCase.addEmergencyContact(contactEntity)
 
+    fun updateEmergencyContact(contactEntity: EmergencyContactEntity) =
+        useCase.updateEmergencnyContact(contactEntity)
+
     suspend fun deleteEmergencyContact(contactEntity: EmergencyContactEntity) =
         useCase.deleteEmergencnyContact(contactEntity)
 

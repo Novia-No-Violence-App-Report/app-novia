@@ -11,9 +11,11 @@ import com.app.novia.R
 import com.app.novia.databinding.ActivityMainBinding
 import com.app.novia.ui.settingsactivity.SettingsActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
+    private val viewModel : MainViewModel by viewModel()
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 "LLISTENER DEST",
                 destination.toString()
             )
-            if (destination.label == "Chat aduan") {
+            if (destination.label == "Chatbot") {
                 true.chatMode()
             } else {
                 false.chatMode()

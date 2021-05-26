@@ -22,6 +22,10 @@ class Repository(
         localDataSource.deleteEmergencyContact(contactEntity)
     }
 
+    override fun updateEmergencnyContact(contactEntity: EmergencyContactEntity) {
+        appExecutors.diskIO().execute { localDataSource.updateEmergencyContact(contactEntity) }
+    }
+
     override fun getEmergencyContacts(): Flow<List<EmergencyContactEntity>> {
         return localDataSource.getAllEmergencyContact()
     }

@@ -2,21 +2,35 @@ package com.app.novia.ui.contactlist
 
 import android.app.Dialog
 import android.os.Bundle
+import android.text.Editable
+import android.util.Log
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.novia.R
 import com.app.novia.core.domain.model.EmergencyContactEntity
+import com.app.novia.core.ui.ContactListAdapter
 import com.app.novia.databinding.ActivityContactListBinding
 import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.w3c.dom.Text
 
 class ContactListActivity : AppCompatActivity() {
 
-    private lateinit var addContactDialog: Dialog
-    private val viewModel : ContactListViewModel by viewModel()
+    private lateinit var contactDialog: Dialog
+    private var state = 0 // 1=Adding, 2=Editing, 3=Deleting
+    private lateinit var currentContact: EmergencyContactEntity
+    private val viewModel: ContactListViewModel by viewModel()
+    private val adapter by lazy { ContactListAdapter() }
+
+    private val submitBtn: Button by lazy { contactDialog.findViewById(R.id.dialog_submit_contact) }
+    private val dialogTitle: TextView by lazy { contactDialog.findViewById(R.id.dialog_add_contact_title) }
+    private val nameEditText: EditText by lazy { contactDialog.findViewById(R.id.dialog_add_contact_name) }
+    private val phoneEditText: EditText by lazy { contactDialog.findViewById(R.id.dialog_add_contact_phone) }
+
     private val binding: ActivityContactListBinding by lazy {
         ActivityContactListBinding.inflate(
             layoutInflater
@@ -28,13 +42,52 @@ class ContactListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initAddContactDialog()
+        initViews()
         initObservers()
         initOnclickListeners()
     }
 
+    private fun initViews() {
+        with(binding) {
+            contactListListview.adapter = adapter
+            adapter.setOnDeleteCallback(object : ContactListAdapter.OnDeleteClickCallback {
+                override fun onDeleteContactClicked(
+                    contactEntity: EmergencyContactEntity?,
+                    position: Int
+                ) {
+                    state = 3
+                    if (contactEntity != null) {
+                        currentContact = contactEntity
+                        transaction()
+                    }
+                }
+            })
+            adapter.setOnEditCallback(object : ContactListAdapter.OnEditClickCallback {
+                override fun onEditContactClicked(
+                    contactEntity: EmergencyContactEntity?,
+                    position: Int
+                ) {
+                    state = 2
+                    dialogTitle.text = getString(R.string.edit_button)
+                    if (contactEntity != null) {
+                        nameEditText.text =
+                            Editable.Factory.getInstance().newEditable(contactEntity.name)
+
+                        phoneEditText.text =
+                            Editable.Factory.getInstance().newEditable(contactEntity.phoneNumber)
+                        currentContact = contactEntity
+                        contactDialog.show()
+                    }
+                }
+            })
+        }
+
+    }
+
     private fun initObservers() {
         viewModel.getEmergencyContacts().observe(this, {
-            binding.contactListTextTest.text = it.toString()
+            adapter.setData(it as ArrayList<EmergencyContactEntity>)
+            adapter.closeAllItems()
         })
     }
 
@@ -43,30 +96,57 @@ class ContactListActivity : AppCompatActivity() {
             finish()
         }
         binding.contactListFabAdd.setOnClickListener {
-            addContactDialog.show()
+            state = 1
+            dialogTitle.text = getString(R.string.add_contact)
+            contactDialog.show()
         }
 
-        val submitBtn = addContactDialog.findViewById<Button>(R.id.dialog_submit_contact)
-        val nameEditText = addContactDialog.findViewById<EditText>(R.id.dialog_add_contact_name)
-        val phoneEditText = addContactDialog.findViewById<EditText>(R.id.dialog_add_contact_phone)
-
         submitBtn.setOnClickListener {
-            val name = nameEditText.text
-            val phone = phoneEditText.text
-            runBlocking {
-                viewModel.addEmergencyContact(EmergencyContactEntity( name.toString(), phone.toString()))
+            val name = nameEditText.text.toString()
+            val phone = phoneEditText.text.toString()
+
+            if (state == 1) {
+                currentContact = EmergencyContactEntity(name, phone)
+            }
+            else if (state == 2) {
+                currentContact.name = name
+                currentContact.phoneNumber = phone
+            }
+            transaction()
+            nameEditText.text.clear()
+            phoneEditText.text.clear()
+            contactDialog.dismiss()
+        }
+    }
+
+    private fun transaction() {
+        var msg = "Contact has been "
+        runBlocking {
+            when (state) {
+                1 -> {
+                    msg += "added"
+                    viewModel.addEmergencyContact(currentContact)
+                }
+                2 -> {
+                    msg += "updated"
+                    viewModel.updateEmergencyContact(currentContact)
+                }
+                3 -> {
+                    msg += "deleted"
+                    viewModel.deleteEmergencyContact(currentContact)
+                }
             }
             Toast.makeText(
-                this, "Name: $name. Phone: $phone",
+                applicationContext, msg,
                 Toast.LENGTH_LONG
             ).show()
-            addContactDialog.dismiss()
+            state = 0
         }
     }
 
     private fun initAddContactDialog() {
-        addContactDialog = Dialog(this)
-        addContactDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        addContactDialog.setContentView(R.layout.dialog_add_contact)
+        contactDialog = Dialog(this)
+        contactDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        contactDialog.setContentView(R.layout.dialog_add_contact)
     }
 }

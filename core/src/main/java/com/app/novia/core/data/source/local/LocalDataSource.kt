@@ -12,5 +12,8 @@ class LocalDataSource(
     suspend fun deleteEmergencyContact(contactEntity: EmergencyContactEntity) =
         emergencyContactDao.deleteEmergencyContact(contactEntity)
 
+    fun updateEmergencyContact(contactEntity: EmergencyContactEntity) =
+        emergencyContactDao.updateEmergencyContact(contactEntity)
+
     fun getAllEmergencyContact() = emergencyContactDao.getAllEmergencyContact()
 }

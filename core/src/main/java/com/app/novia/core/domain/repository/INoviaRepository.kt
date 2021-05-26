@@ -10,6 +10,8 @@ interface INoviaRepository {
 
     suspend fun deleteEmergencnyContact(contactEntity: EmergencyContactEntity)
 
+    fun updateEmergencnyContact(contactEntity: EmergencyContactEntity)
+
     fun getEmergencyContacts(): Flow<List<EmergencyContactEntity>>
 
     suspend fun sendChat(message: String?) : Flow<ApiResponse<ChatEntity>>

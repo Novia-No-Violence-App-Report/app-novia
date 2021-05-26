@@ -12,6 +12,9 @@ interface EmergencyContactDao {
     @Delete
     suspend fun deleteEmergencyContact(contactEntity: EmergencyContactEntity)
 
+    @Update
+    fun updateEmergencyContact(contactEntity: EmergencyContactEntity)
+
     @Query("SELECT * from EmergencyContact")
     fun getAllEmergencyContact(): Flow<List<EmergencyContactEntity>>
 }

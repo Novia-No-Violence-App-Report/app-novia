@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/navigation_chatbot"
         android:name="com.app.novia.ui.chatbot.ChatFragment"
-        android:label="@string/title_chatbot"
+        android:label="@string/chat_aduan"
         tools:layout="@layout/fragment_chatbot" />
 
 </navigation>

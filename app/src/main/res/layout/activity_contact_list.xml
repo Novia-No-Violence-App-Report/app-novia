@@ -48,22 +48,14 @@
         app:layout_constraintStart_toEndOf="@id/contact_list_btn_back"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/contact_list_recyclerview"
+    <ListView
+        android:id="@+id/contact_list_listview"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/guideline_left"
-        app:layout_constraintEnd_toStartOf="@id/guideline_right"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top"/>
-
-    <TextView
-        android:id="@+id/contact_list_text_test"
-        app:layout_constraintTop_toBottomOf="@id/contact_list_recyclerview"
-        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
-        android:layout_marginTop="10dp"
-        android:text="@string/hi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:layout_constraintBottom_toTopOf="@id/contact_list_fab_add"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/contact_list_fab_add"

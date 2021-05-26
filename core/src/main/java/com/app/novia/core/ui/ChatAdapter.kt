@@ -11,7 +11,7 @@ import com.app.novia.core.domain.model.ChatEntity
 import java.text.DateFormat
 
 
-class CustomAdapter(private val context: Context) :
+class ChatAdapter(private val context: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var list = ArrayList<ChatEntity>()

@@ -15,6 +15,10 @@ class NoviaInteractor(private val repository: INoviaRepository) : NoviaUseCase {
         repository.deleteEmergencnyContact(contactEntity)
     }
 
+    override fun updateEmergencnyContact(contactEntity: EmergencyContactEntity) {
+        repository.updateEmergencnyContact(contactEntity)
+    }
+
     override fun getEmergencyContacts(): Flow<List<EmergencyContactEntity>> {
         return repository.getEmergencyContacts()
     }

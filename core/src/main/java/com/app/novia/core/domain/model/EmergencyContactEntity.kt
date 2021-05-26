@@ -7,10 +7,12 @@ import java.io.Serializable
 
 @Entity(tableName = "EmergencyContact")
 data class EmergencyContactEntity(
-    @ColumnInfo(name = "name")
-    val name: String? = null,
 
-    @PrimaryKey
-    @ColumnInfo(name = "phone_number")
-    val phoneNumber: String,
-) : Serializable
+    @PrimaryKey(autoGenerate = true) var id: Int,
+
+    @ColumnInfo(name = "name") var name: String,
+
+    @ColumnInfo(name = "phone_number") var phoneNumber: String,
+) : Serializable {
+    constructor(_name: String, _phoneNumber: String) : this(0, _name, _phoneNumber)
+}

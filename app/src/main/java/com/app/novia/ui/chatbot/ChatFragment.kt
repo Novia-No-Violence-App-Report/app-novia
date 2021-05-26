@@ -14,7 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.novia.core.data.source.remote.ApiResponse
 import com.app.novia.core.domain.model.ChatEntity
-import com.app.novia.core.ui.CustomAdapter
+import com.app.novia.core.ui.ChatAdapter
 import com.app.novia.databinding.FragmentChatbotBinding
 import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,7 +25,7 @@ class ChatFragment : Fragment() {
 
     private val chatViewModel: ChatViewModel by viewModel()
     private var _binding: FragmentChatbotBinding? = null
-    private val adapter by lazy { context?.let { CustomAdapter(it) } }
+    private val adapter by lazy { context?.let { ChatAdapter(it) } }
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -38,17 +38,22 @@ class ChatFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        runBlocking {
-            sendChat("Hi ini test chatbot Novia")
-        }
 
         with(binding) {
             rvChatbot.adapter = adapter
             rvChatbot.itemAnimator = null
             rvChatbot.setHasFixedSize(true)
             rvChatbot.layoutManager = LinearLayoutManager(context)
+            adapter?.addData(
+                ChatEntity(
+                    "Hi this is Novia",
+                    true,
+                    SimpleDateFormat("hh:mm", Locale.UK).format(Date())
+                )
+            )
             btnSendChatbot.setOnClickListener {
                 val msg = inputChatbot.text.toString()
+                inputChatbot.text.clear()
                 if (msg == "") {
                     Toast.makeText(
                         context, "Harap masukkan pesan terlebih dahulu",
@@ -71,7 +76,7 @@ class ChatFragment : Fragment() {
 
     @SuppressLint("SimpleDateFormat")
     private suspend fun sendChat(msg: String?) {
-        val currentDate = SimpleDateFormat("hh:mm").format(Date())
+        val currentDate = SimpleDateFormat("hh:mm", Locale.UK).format(Date())
         adapter?.addData(ChatEntity(msg, false, currentDate.toString()))
         adapter?.itemCount?.minus(1)?.let { binding.rvChatbot.scrollToPosition(it) }
         chatViewModel.sendChat(msg).observeOnce(viewLifecycleOwner, { response ->
@@ -80,7 +85,8 @@ class ChatFragment : Fragment() {
                     is ApiResponse.Success -> {
                         Log.d("API RESPONSE", "SUCCESS SENDING CHAT")
                         response.data.senderIsBot = true
-                        response.data.timeStamp = SimpleDateFormat("hh:mm").format(Date()).toString()
+                        response.data.timeStamp =
+                            SimpleDateFormat("hh:mm", Locale.UK).format(Date()).toString()
                         adapter?.addData(response.data)
                         adapter?.itemCount?.minus(1)?.let { binding.rvChatbot.scrollToPosition(it) }
                     }
