@@ -23,4 +23,15 @@
     <string name="kirim_sms_blast">Kirim SMS blast</string>
     <string name="kontak_kerabat">Kontak kerabat</string>
     <string name="anda_terhubung_dengan_bot">Anda terhubung dengan bot</string>
+    <string name="selamat_datang">Selamat datang <br/> di Novia!</string>
+    <string name="register">Daftar</string>
+    <string name="register_now">Daftar sekarang</string>
+    <string name="login">Masuk</string>
+    <string name="login_description">Silakan log masuk dengan akun Anda</string>
+    <string name="login_question">Belum memiliki akun? <b>Daftar sekarang!</b></string>
+    <string name="register_description">Mari bergabung dengan Novia!</string>
+    <string name="register_question">Dengan mendaftar, Anda menyetujui<br/> <b>syarat dan kebijakan</b> layanan Novia.</string>
+    <string name="welcome_description">Aplikasi layanan cepat tanggap<br/> untuk pengaduan tindakan kekerasan</string>
+    <string name="email">E-mail</string>
+    <string name="password">Kata sandi</string>
 </resources>

@@ -1,9 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.welcomepage.RegisterActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_gravity="center"
+            android:layout_marginTop="23dp"
+            android:layout_width="98dp"
+            android:layout_height="26dp"
+            android:contentDescription="@string/novia_logo"
+            android:maxWidth="98dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/register_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            style="@style/Text.Header1"
+            android:text="@string/register" />
+
+        <TextView
+            android:id="@+id/register_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            style="@style/Text.Header2"
+            android:text="@string/register_description" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="@string/register_now"
+        android:layout_width="220dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="35dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/login_question"
+            android:gravity="center"
+            style="@style/Text.Header4"
+            android:layout_marginBottom="20dp"
+            android:text="@string/register_question" />
+
+    </LinearLayout>
+
+</RelativeLayout>
