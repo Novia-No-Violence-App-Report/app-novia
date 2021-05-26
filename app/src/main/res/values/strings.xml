@@ -34,4 +34,10 @@
     <string name="welcome_description">Aplikasi layanan cepat tanggap<br/> untuk pengaduan tindakan kekerasan</string>
     <string name="email">E-mail</string>
     <string name="password">Kata sandi</string>
+    <string name="phone">Nomor ponsel</string>
+    <string name="address">Alamat rumah</string>
+    <string name="name">Nama lengkap</string>
+    <string name="gender">Jenis kelamin</string>
+    <string name="male">Pria</string>
+    <string name="female">Wanita</string>
 </resources>

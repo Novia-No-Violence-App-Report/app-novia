@@ -36,34 +36,118 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:gravity="center"
+            android:layout_marginBottom="30dp"
             style="@style/Text.Header2"
             android:text="@string/register_description" />
 
-    </LinearLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:hint="@string/name"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="text" />
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:text="@string/register_now"
-        android:layout_width="220dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:textSize="16sp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:hint="@string/email"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:hint="@string/password"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/address"
+            android:hint="@string/address"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="text" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone"
+            android:hint="@string/phone"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="15dp"
+            android:inputType="number" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_horizontal"
         android:layout_marginBottom="35dp"
+        android:layout_marginTop="470dp"
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/login_question"
-            android:gravity="center"
-            style="@style/Text.Header4"
-            android:layout_marginBottom="20dp"
-            android:text="@string/register_question" />
+            android:layout_width="150dp"
+            android:layout_marginStart="33dp"
+            android:gravity="center_vertical"
+            android:layout_height="47dp"
+            android:id="@+id/gender"
+            android:hint="@string/gender"
+            android:textSize="18sp"
+            android:inputType="number" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="right"
+            android:layout_marginStart="10dp" >
+
+            <RadioButton
+                android:id="@+id/radio_pirates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/male"
+                android:textSize="18sp"
+                android:onClick="onRadioButtonClicked" />
+
+            <RadioButton android:id="@+id/radio_ninjas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                android:textSize="18sp"
+                android:onClick="onRadioButtonClicked" />
+
+        </RadioGroup>
 
     </LinearLayout>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnRegister"
+        android:text="@string/register_now"
+        android:layout_width="220dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="136dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:id="@+id/login_question"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        style="@style/Text.Header4"
+        android:layout_marginBottom="56dp"
+        android:text="@string/register_question" />
 
 </RelativeLayout>
