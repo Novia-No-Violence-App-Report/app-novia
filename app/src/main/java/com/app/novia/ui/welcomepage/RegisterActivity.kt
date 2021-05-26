@@ -1,12 +1,12 @@
-package com.app.novia.ui
+package com.app.novia.ui.welcomepage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.novia.R
 
-class SplashScreen : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash_screen)
+        setContentView(R.layout.activity_register)
     }
 }
