@@ -23,9 +23,24 @@
     <string name="anda_terhubung_dengan_bot">You are connected with bot</string>
     <string name="contact_list">Contact List</string>
     <string name="add_contact">Add Contact</string>
-    <string name="edit_contact">Edit Contact</string>
     <string name="submit">Submit</string>
     <string name="name">Name</string>
     <string name="nomor_telepon">Phone Number</string>
-    <string name="hi">Hi</string>
+    <string name="selamat_datang">Selamat datang <br/> di Novia!</string>
+    <string name="register">Daftar</string>
+    <string name="register_now">Daftar sekarang</string>
+    <string name="login">Masuk</string>
+    <string name="login_description">Silakan log masuk dengan akun Anda</string>
+    <string name="login_question">Belum memiliki akun? <b>Daftar sekarang!</b></string>
+    <string name="register_description">Mari bergabung dengan Novia!</string>
+    <string name="register_question">Dengan mendaftar, Anda menyetujui<br/> <b>syarat dan kebijakan</b> layanan Novia.</string>
+    <string name="welcome_description">Aplikasi layanan cepat tanggap<br/> untuk pengaduan tindakan kekerasan</string>
+    <string name="email">E-mail</string>
+    <string name="password">Kata sandi</string>
+    <string name="phone">Nomor ponsel</string>
+    <string name="address">Alamat rumah</string>
+    <string name="gender">Jenis kelamin</string>
+    <string name="male">Pria</string>
+    <string name="female">Wanita</string>
+    <string name="send_icon">Send Icon</string>
 </resources>

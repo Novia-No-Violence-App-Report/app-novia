@@ -34,5 +34,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/input_chatbot"
         android:layout_width="40dp"
-        android:layout_height="40dp"/>
+        android:layout_height="40dp"
+        android:contentDescription="@string/send_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

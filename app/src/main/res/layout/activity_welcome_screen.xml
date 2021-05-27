@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.welcomepage.WelcomeScreenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_gravity="center"
+            android:layout_marginTop="23dp"
+            android:layout_width="98dp"
+            android:layout_height="26dp"
+            android:contentDescription="@string/novia_logo"
+            android:maxWidth="98dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/welcome_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            style="@style/Text.Header1"
+            android:text="@string/selamat_datang" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/home_greetings_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="120dp"
+        android:gravity="center"
+        style="@style/Text.Header2"
+        android:text="@string/welcome_description" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="35dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnRegisterPage"
+            android:text="@string/register"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="7dp"
+            android:textSize="16sp"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/btnLoginPage"
+            android:text="@string/login"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:textSize="16sp"
+            style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -18,14 +18,15 @@
         <activity
             android:name=".ui.contactlist.ContactListActivity"
             android:exported="true" />
-        <activity
-            android:name=".ui.splash.SplashScreen"
-            android:exported="true" />
+        <activity android:name=".ui.welcomepage.RegisterActivity"/>
+        <activity android:name=".ui.welcomepage.LoginActivity" />
+        <activity android:name=".ui.welcomepage.WelcomeScreenActivity" />
+        <activity android:name=".ui.mainactivity.MainActivity" />
         <activity
             android:name=".ui.settingsactivity.SettingsActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.mainactivity.MainActivity"
+            android:name=".ui.welcomepage.SplashScreenActivity"
             android:exported="true"
             android:label="@string/novia">
             <intent-filter>
