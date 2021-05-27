@@ -5,6 +5,7 @@ import com.app.novia.core.utils.EspressoIdlingResource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 
 class RemoteDataSource(private val apiService: ApiService) {
     suspend fun sendChat(message: String?): Flow<ApiResponse<ChatEntity>> {

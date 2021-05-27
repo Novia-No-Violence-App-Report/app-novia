@@ -7,7 +7,7 @@ import com.app.novia.core.data.source.local.NoviaDatabase
 import com.app.novia.core.data.source.remote.ApiService
 import com.app.novia.core.data.source.remote.RemoteDataSource
 import com.app.novia.core.domain.repository.INoviaRepository
-import com.salomohutapea.movieapp.core.utils.AppExecutors
+import com.app.novia.core.utils.AppExecutors
 import kotlinx.coroutines.DelicateCoroutinesApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

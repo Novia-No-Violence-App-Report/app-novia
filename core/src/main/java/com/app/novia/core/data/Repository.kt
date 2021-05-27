@@ -6,7 +6,7 @@ import com.app.novia.core.data.source.remote.RemoteDataSource
 import com.app.novia.core.domain.model.ChatEntity
 import com.app.novia.core.domain.model.EmergencyContactEntity
 import com.app.novia.core.domain.repository.INoviaRepository
-import com.salomohutapea.movieapp.core.utils.AppExecutors
+import com.app.novia.core.utils.AppExecutors
 import kotlinx.coroutines.flow.Flow
 
 class Repository(
