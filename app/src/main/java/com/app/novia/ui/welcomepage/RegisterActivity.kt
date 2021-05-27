@@ -1,12 +1,23 @@
 package com.app.novia.ui.welcomepage
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import com.app.novia.R
+import androidx.appcompat.app.AppCompatActivity
+import com.app.novia.databinding.ActivityRegisterBinding
+import com.app.novia.databinding.ActivityWelcomeScreenBinding
+import com.app.novia.ui.mainactivity.MainActivity
 
 class RegisterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnRegister.setOnClickListener {
+            //TODO: Register logic
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

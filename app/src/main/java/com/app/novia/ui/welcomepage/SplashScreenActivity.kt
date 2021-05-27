@@ -12,6 +12,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
         supportActionBar?.hide()
 
+        //TODO: Check whether user signed in or not
         Handler(mainLooper).postDelayed({
             val intent = Intent(this@SplashScreenActivity, WelcomeScreenActivity::class.java)
             startActivity(intent)
