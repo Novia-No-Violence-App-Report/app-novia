@@ -117,15 +117,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:text="@string/male"
-                android:textSize="18sp"
-                android:onClick="onRadioButtonClicked" />
+                android:textSize="18sp" />
 
             <RadioButton android:id="@+id/radio_ninjas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/female"
-                android:textSize="18sp"
-                android:onClick="onRadioButtonClicked" />
+                android:textSize="18sp" />
 
         </RadioGroup>
 
