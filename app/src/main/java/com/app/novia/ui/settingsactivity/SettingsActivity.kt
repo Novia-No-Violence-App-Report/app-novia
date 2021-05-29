@@ -1,17 +1,23 @@
 package com.app.novia.ui.settingsactivity
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.novia.databinding.ActivitySettingsBinding
 import com.app.novia.ui.welcomepage.WelcomeScreenActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SettingsActivity : AppCompatActivity() {
     private val viewModel : SettingsViewModel by viewModel()
     private lateinit var binding: ActivitySettingsBinding
     private lateinit var auth : FirebaseAuth
+    lateinit var filepath : Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +30,10 @@ class SettingsActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.profilePic.setOnClickListener {
+            startFileChooser()
+        }
+
         binding.btnLogout.setOnClickListener {
             auth.signOut()
             Intent(this@SettingsActivity, WelcomeScreenActivity::class.java).also {
@@ -32,4 +42,29 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun startFileChooser() {
+        var intent = Intent()
+        intent.setType("image/*")
+        intent.setAction(Intent.ACTION_GET_CONTENT)
+        startActivityForResult(Intent.createChooser(intent, "Choose picture"), 111)
+        var storage = FirebaseStorage.getInstance().reference.child("images/pic.jpg")
+        storage.putFile(filepath)
+            .addOnSuccessListener { p0 ->
+                Toast.makeText(applicationContext, "Foto berhasil diunggah!", Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener { p0 ->
+                Toast.makeText(applicationContext, "Foto gagal diperbarui", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 111 && resultCode == Activity.RESULT_OK && data != null) {
+            filepath = data.data!!
+            var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filepath)
+            binding.profilePic.setImageBitmap(bitmap)
+        }
+    }
+
 }
