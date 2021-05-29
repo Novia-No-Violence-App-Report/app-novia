@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.app.novia.databinding.ActivityRegisterBinding
-import com.app.novia.databinding.ActivityWelcomeScreenBinding
 import com.app.novia.ui.mainactivity.MainActivity
 
 class RegisterActivity : AppCompatActivity() {

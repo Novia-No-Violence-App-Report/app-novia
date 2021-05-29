@@ -1,11 +1,9 @@
 package com.app.novia.ui.welcomepage
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.novia.R
+import androidx.appcompat.app.AppCompatActivity
 import com.app.novia.databinding.ActivityLoginBinding
-import com.app.novia.databinding.ActivityMainBinding
 import com.app.novia.ui.mainactivity.MainActivity
 
 class LoginActivity : AppCompatActivity() {
