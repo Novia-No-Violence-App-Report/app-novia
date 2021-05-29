@@ -64,29 +64,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/fab_red_gradient"
-            android:padding="20dp">
+            android:padding="15dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/settings_user_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:contentDescription="@string/user_profile_picture"
-                android:src="@drawable/ic_baseline_person_24"
+                android:src="@drawable/add_photo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/settings_user_name"
-                style="@style/Text"
+                style="@style/Text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/poppins_light"
                 android:text="@string/yudi_iswara"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginTop="2dp"
                 app:layout_constraintStart_toEndOf="@id/settings_user_icon"
                 app:layout_constraintTop_toTopOf="parent" />
 
