@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:lineSpacingExtra="-9sp"
             android:gravity="center"
             style="@style/Text.Header1"
             android:text="@string/selamat_datang" />
@@ -35,7 +36,8 @@
 
     <TextView
         android:id="@+id/home_greetings_message"
-        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="120dp"
