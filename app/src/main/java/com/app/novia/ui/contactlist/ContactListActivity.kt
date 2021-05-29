@@ -66,7 +66,7 @@ class ContactListActivity : AppCompatActivity() {
                     position: Int
                 ) {
                     state = 2
-                    dialogTitle.text = getString(R.string.edit_button)
+                    dialogTitle.text = getString(R.string.edit_contact)
                     if (contactEntity != null) {
                         nameEditText.text =
                             Editable.Factory.getInstance().newEditable(contactEntity.name)
@@ -95,6 +95,8 @@ class ContactListActivity : AppCompatActivity() {
         }
         binding.contactListFabAdd.setOnClickListener {
             state = 1
+            nameEditText.text.clear()
+            phoneEditText.text.clear()
             dialogTitle.text = getString(R.string.add_contact)
             contactDialog.show()
         }
