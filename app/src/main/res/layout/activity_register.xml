@@ -90,47 +90,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:layout_marginTop="470dp"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_marginStart="33dp"
-            android:gravity="center_vertical"
-            android:layout_height="47dp"
-            android:id="@+id/gender"
-            android:hint="@string/gender"
-            android:textSize="18sp"/>
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="end"
-            android:layout_marginStart="10dp" >
-
-            <RadioButton
-                android:id="@+id/radio_pirates"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:text="@string/male"
-                android:textSize="18sp" />
-
-            <RadioButton android:id="@+id/radio_ninjas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/female"
-                android:textSize="18sp"/>
-
-        </RadioGroup>
-
-    </LinearLayout>
-
     <Button
         android:layout_alignParentBottom="true"
         android:id="@+id/btnRegister"
@@ -138,13 +97,15 @@
         android:layout_width="220dp"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="126dp"
         android:textSize="16sp" />
 
     <TextView
+        android:layout_width="300dp"
         android:layout_alignParentBottom="true"
         android:id="@+id/login_question"
         android:layout_centerHorizontal="true"
+        android:lineSpacingExtra="-2sp"
         android:gravity="center"
         style="@style/Text.Header4"
         android:layout_marginBottom="56dp"
