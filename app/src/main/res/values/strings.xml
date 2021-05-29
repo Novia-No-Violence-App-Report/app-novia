@@ -30,6 +30,7 @@
     <string name="register">Daftar</string>
     <string name="register_now">Daftar sekarang</string>
     <string name="login">Masuk</string>
+    <string name="logout">Keluar dari akun</string>
     <string name="login_description">Silakan log masuk dengan akun Anda</string>
     <string name="login_question">Belum memiliki akun? <b>Daftar sekarang!</b></string>
     <string name="register_description">Mari bergabung dengan Novia!</string>

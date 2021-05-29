@@ -38,10 +38,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView"
         style="@style/Text.Header1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
         android:text="@string/settings"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline_top"
@@ -50,6 +52,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="0dp"
+        android:id="@+id/card"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:cardCornerRadius="10dp"
@@ -97,7 +100,28 @@
                 android:textColor="@color/white"
                 app:layout_constraintStart_toEndOf="@id/settings_user_icon"
                 app:layout_constraintTop_toBottomOf="@id/settings_user_name" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" >
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/logout"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

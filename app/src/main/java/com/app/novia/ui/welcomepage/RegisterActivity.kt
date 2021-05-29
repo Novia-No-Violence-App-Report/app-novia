@@ -16,7 +16,6 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -63,4 +62,13 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
+    override fun onStart() {
+        super.onStart()
+        if(auth.currentUser != null) {
+            Intent(this@RegisterActivity, MainActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(it)
+            }
+        }
+    }
 }
