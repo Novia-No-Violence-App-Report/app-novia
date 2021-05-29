@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/dialog_add_contact_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="@string/add_contact" />
+
+    <TextView
+        style="@style/Text.Paragraph"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/dialog_add_contact_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"
+        tools:ignore="LabelFor"
+        android:importantForAutofill="no" />
+
+    <TextView
+        style="@style/Text.Paragraph"
+        android:text="@string/nomor_telepon" />
+
+    <EditText
+        android:id="@+id/dialog_add_contact_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:digits="081234567890"
+        android:textSize="16sp"
+        tools:ignore="LabelFor"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/dialog_submit_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/novia_red"
+        android:text="@string/submit"/>
+</LinearLayout>

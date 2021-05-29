@@ -1,19 +1,20 @@
 package com.app.novia.ui.sos
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.app.novia.databinding.FragmentSosBinding
+import com.app.novia.ui.contactlist.ContactListActivity
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SosFragment : Fragment() {
-    private lateinit var homeViewModel: SosViewModel
+    private val viewModel: SosViewModel by viewModel()
+
     private var _binding: FragmentSosBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -21,11 +22,17 @@ class SosFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        homeViewModel =
-            ViewModelProvider(this).get(SosViewModel::class.java)
 
         _binding = FragmentSosBinding.inflate(inflater, container, false)
+        initializeViews()
         return binding.root
+    }
+
+    private fun initializeViews() {
+        binding.sosKontakKerabat.setOnClickListener {
+            val intent = Intent(context, ContactListActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroyView() {

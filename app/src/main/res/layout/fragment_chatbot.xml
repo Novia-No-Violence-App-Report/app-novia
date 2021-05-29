@@ -6,17 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".ui.chatbot.ChatFragment">
 
-    <TextView
-        android:id="@+id/text_chatbot"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_chatbot"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    
+    <EditText
+        android:id="@+id/input_chatbot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="60dp"
+        android:layout_height="60dp"
+        android:inputType="text"
+        tools:ignore="Autofill,LabelFor"/>
+
+    <ImageView
+        android:id="@+id/btn_send_chatbot"
+        android:src="@drawable/ic_baseline_send_24"
+        app:layout_constraintBottom_toBottomOf="@id/input_chatbot"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/input_chatbot"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@string/send_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

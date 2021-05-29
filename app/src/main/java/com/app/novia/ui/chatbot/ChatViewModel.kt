@@ -1,13 +1,11 @@
 package com.app.novia.ui.chatbot
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
+import com.app.novia.core.domain.usecase.NoviaUseCase
 
-class ChatViewModel : ViewModel() {
+class ChatViewModel constructor(private val useCase: NoviaUseCase) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is chatbot Fragment"
-    }
-    val text: LiveData<String> = _text
+    suspend fun sendChat(message: String?) = useCase.sendChat(message).asLiveData()
+
 }
