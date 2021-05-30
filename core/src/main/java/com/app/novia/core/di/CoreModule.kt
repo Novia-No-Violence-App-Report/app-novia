@@ -1,7 +1,7 @@
 package com.app.novia.core.di
 
 import androidx.room.Room
-import com.app.novia.core.data.Repository
+import com.app.novia.core.Repository
 import com.app.novia.core.data.source.local.LocalDataSource
 import com.app.novia.core.data.source.local.NoviaDatabase
 import com.app.novia.core.data.source.remote.ApiService

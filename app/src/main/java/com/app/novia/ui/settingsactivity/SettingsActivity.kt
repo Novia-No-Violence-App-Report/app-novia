@@ -8,37 +8,45 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.novia.databinding.ActivitySettingsBinding
-import com.app.novia.ui.welcomepage.WelcomeScreenActivity
+import com.app.novia.ui.welcomeactivities.WelcomeScreenActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SettingsActivity : AppCompatActivity() {
-    private val viewModel : SettingsViewModel by viewModel()
-    private lateinit var binding: ActivitySettingsBinding
-    private lateinit var auth : FirebaseAuth
-    private lateinit var filepath : Uri
+    private val viewModel: SettingsViewModel by viewModel()
+    private val binding: ActivitySettingsBinding by lazy {
+        ActivitySettingsBinding.inflate(
+            layoutInflater
+        )
+    }
+    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+    private lateinit var filepath: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySettingsBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance()
+        initializeClickListeners()
+    }
 
-        binding.settingsBtnBack.setOnClickListener {
-            finish()
-        }
+    private fun initializeClickListeners() {
+        with(binding) {
+            settingsBtnBack.setOnClickListener {
+                finish()
+            }
 
-        binding.profilePic.setOnClickListener {
-            startFileChooser()
-        }
+            profilePic.setOnClickListener {
+                startFileChooser()
+            }
 
-        binding.btnLogout.setOnClickListener {
-            auth.signOut()
-            Intent(this@SettingsActivity, WelcomeScreenActivity::class.java).also {
-                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(it)
+            btnLogout.setOnClickListener {
+                auth.signOut()
+                Intent(this@SettingsActivity, WelcomeScreenActivity::class.java).also {
+                    it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(it)
+                }
             }
         }
     }
@@ -48,13 +56,17 @@ class SettingsActivity : AppCompatActivity() {
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(Intent.createChooser(intent, "Choose picture"), 111)
+
         val storage = FirebaseStorage.getInstance().reference.child("images/pic.jpg")
+
         storage.putFile(filepath)
             .addOnSuccessListener {
-                Toast.makeText(applicationContext, "Foto berhasil diunggah!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Foto berhasil diunggah!", Toast.LENGTH_LONG)
+                    .show()
             }
             .addOnFailureListener {
-                Toast.makeText(applicationContext, "Foto gagal diperbarui", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Foto gagal diperbarui", Toast.LENGTH_LONG)
+                    .show()
             }
     }
 

@@ -1,4 +1,4 @@
-package com.app.novia.core.data
+package com.app.novia.core
 
 import com.app.novia.core.data.source.local.LocalDataSource
 import com.app.novia.core.data.source.remote.ApiResponse
@@ -13,7 +13,7 @@ class Repository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors
-) : INoviaRepository{
+) : INoviaRepository {
     override suspend fun addEmergencyContact(contactEntity: EmergencyContactEntity) {
         localDataSource.addEmergencyContact(contactEntity)
     }
@@ -30,8 +30,7 @@ class Repository(
         return localDataSource.getAllEmergencyContact()
     }
 
-    override suspend fun sendChat(message: String?) : Flow<ApiResponse<ChatEntity>>{
+    override suspend fun sendChat(message: String?): Flow<ApiResponse<ChatEntity>> {
         return remoteDataSource.sendChat(message)
     }
-
 }

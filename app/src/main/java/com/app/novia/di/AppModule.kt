@@ -5,7 +5,9 @@ import com.app.novia.core.domain.usecase.NoviaUseCase
 import com.app.novia.ui.chatbot.ChatViewModel
 import com.app.novia.ui.contactlist.ContactListViewModel
 import com.app.novia.ui.home.HomeViewModel
+import com.app.novia.ui.login.LoginViewModel
 import com.app.novia.ui.mainactivity.MainViewModel
+import com.app.novia.ui.registeractivity.RegisterViewModel
 import com.app.novia.ui.settingsactivity.SettingsViewModel
 import com.app.novia.ui.sos.SosViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -24,4 +26,6 @@ val viewModelModule = module {
     viewModel { MainViewModel(get()) }
     viewModel { SettingsViewModel(get()) }
     viewModel { ChatViewModel(get()) }
+    viewModel { RegisterViewModel() }
+    viewModel { LoginViewModel() }
 }
