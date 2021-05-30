@@ -40,8 +40,5 @@
     <string name="password">Kata sandi</string>
     <string name="phone">Nomor ponsel</string>
     <string name="address">Alamat rumah</string>
-    <string name="gender">Jenis kelamin</string>
-    <string name="male">Pria</string>
-    <string name="female">Wanita</string>
     <string name="send_icon">Send Icon</string>
 </resources>
