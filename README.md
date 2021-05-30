@@ -22,4 +22,6 @@ git clone https://github.com/Novia-No-Violence-App-Report/app-novia.git
 
 ### 3. Open the project using Android Studio
 
-### 4. Build the app
+### 4. Create your firebase project and add google-services.json to this project root directory
+
+### 5. Build the app
