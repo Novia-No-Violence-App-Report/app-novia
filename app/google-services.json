@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "940590707647",
+    "project_id": "noviaproject-f3a2c",
+    "storage_bucket": "noviaproject-f3a2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940590707647:android:fbe92524a85821c60f670a",
+        "android_client_info": {
+          "package_name": "com.app.novia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940590707647-j0sggn85h8s45o6hjtak1ke4d2sir9jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeR_cP71WgeXkgYr_myE4mt_5iOep40ZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940590707647-j0sggn85h8s45o6hjtak1ke4d2sir9jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
