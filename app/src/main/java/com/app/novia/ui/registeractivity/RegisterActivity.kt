@@ -13,8 +13,6 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RegisterActivity : AppCompatActivity() {
 
-    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
-
     private val binding: ActivityRegisterBinding by lazy {
         ActivityRegisterBinding.inflate(
             layoutInflater
@@ -75,7 +73,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        if (auth.currentUser != null) {
+        if (registerViewModel.auth.currentUser != null) {
             Intent(this@RegisterActivity, MainActivity::class.java).also {
                 it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(it)

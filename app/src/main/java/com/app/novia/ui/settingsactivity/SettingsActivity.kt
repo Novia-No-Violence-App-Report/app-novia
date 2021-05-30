@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.novia.databinding.ActivitySettingsBinding
 import com.app.novia.ui.welcomeactivities.WelcomeScreenActivity
-import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.storage.FirebaseStorage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,7 +20,8 @@ class SettingsActivity : AppCompatActivity() {
             layoutInflater
         )
     }
-    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+
+    private var user: FirebaseUser? = null
     private lateinit var filepath: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,19 @@ class SettingsActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        viewModel.auth.currentUser.let {
+            user = it
+        }
+
         initializeClickListeners()
+        initializeViews()
+    }
+
+    private fun initializeViews() {
+        with(binding) {
+            settingsUserName.text = user?.displayName
+            settingsUserEmail.text = user?.email
+        }
     }
 
     private fun initializeClickListeners() {
@@ -42,7 +55,7 @@ class SettingsActivity : AppCompatActivity() {
             }
 
             btnLogout.setOnClickListener {
-                auth.signOut()
+                viewModel.auth.signOut()
                 Intent(this@SettingsActivity, WelcomeScreenActivity::class.java).also {
                     it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(it)

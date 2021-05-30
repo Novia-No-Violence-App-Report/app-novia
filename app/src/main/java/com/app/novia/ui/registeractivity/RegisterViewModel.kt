@@ -8,7 +8,7 @@ import com.google.firebase.auth.UserProfileChangeRequest
 
 class RegisterViewModel : ViewModel() {
 
-    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+    val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
     private val _registerResult = MutableLiveData<Pair<Boolean, String?>>()
 
     fun registerUser(email: String, password: String, name: String) {
