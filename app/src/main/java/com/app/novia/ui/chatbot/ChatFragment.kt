@@ -46,7 +46,14 @@ class ChatFragment : Fragment() {
             rvChatbot.layoutManager = LinearLayoutManager(context)
             adapter?.addData(
                 ChatEntity(
-                    "Hi this is Novia",
+                    "Halo, saya Novia, siap membantu anda!",
+                    true,
+                    SimpleDateFormat("hh:mm", Locale.UK).format(Date())
+                )
+            )
+            adapter?.addData(
+                ChatEntity(
+                    "Silakan ketikkan laporan anda dengan cara membalas pesan ini",
                     true,
                     SimpleDateFormat("hh:mm", Locale.UK).format(Date())
                 )
