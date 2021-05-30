@@ -17,7 +17,7 @@ class SettingsActivity : AppCompatActivity() {
     private val viewModel : SettingsViewModel by viewModel()
     private lateinit var binding: ActivitySettingsBinding
     private lateinit var auth : FirebaseAuth
-    lateinit var filepath : Uri
+    private lateinit var filepath : Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,16 +44,16 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun startFileChooser() {
-        var intent = Intent()
-        intent.setType("image/*")
-        intent.setAction(Intent.ACTION_GET_CONTENT)
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(Intent.createChooser(intent, "Choose picture"), 111)
-        var storage = FirebaseStorage.getInstance().reference.child("images/pic.jpg")
+        val storage = FirebaseStorage.getInstance().reference.child("images/pic.jpg")
         storage.putFile(filepath)
-            .addOnSuccessListener { p0 ->
+            .addOnSuccessListener {
                 Toast.makeText(applicationContext, "Foto berhasil diunggah!", Toast.LENGTH_LONG).show()
             }
-            .addOnFailureListener { p0 ->
+            .addOnFailureListener {
                 Toast.makeText(applicationContext, "Foto gagal diperbarui", Toast.LENGTH_LONG).show()
             }
     }
@@ -62,7 +62,7 @@ class SettingsActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 111 && resultCode == Activity.RESULT_OK && data != null) {
             filepath = data.data!!
-            var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filepath)
+            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filepath)
             binding.profilePic.setImageBitmap(bitmap)
         }
     }
