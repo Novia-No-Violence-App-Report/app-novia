@@ -9,7 +9,7 @@
     <string name="user_profile_picture">Gambar profil pengguna</string>
     <string name="novia_novia_com">novia@novia.com</string>
     <string name="back_button">Tombol Kembali</string>
-    <string name="halo_username">Halo, Username</string>
+    <string name="halo_username">Hai, Username</string>
     <string name="semoga_anda_sehat_selalu">Semoga Anda sehat selalu!</string>
     <string name="tips_trik"><![CDATA[Tips & Trik]]></string>
     <string name="preventif_apabila_mendapat_tindakan_asusila">Preventif apabila mendapat perlakuan asusila</string>
@@ -34,7 +34,7 @@
     <string name="logout">Keluar dari akun</string>
     <string name="login_description">Silakan log masuk dengan akun Anda</string>
     <string name="login_question">Belum memiliki akun? <b>Daftar sekarang!</b></string>
-    <string name="register_description">Mari bergabung dengan Novia!</string>
+    <string name="register_description">Mari bergabung bersama Novia!</string>
     <string name="register_question">Dengan mendaftar, Anda menyetujui <b>syarat dan kebijakan</b> layanan Novia.</string>
     <string name="welcome_description">Aplikasi cepat tanggap untuk pelaporan tindakan kekerasan dan asusila</string>
     <string name="email">E-mail</string>
@@ -54,4 +54,5 @@
     <string name="polisi_phone">110</string>
     <string name="ambulans">Ambulans</string>
     <string name="ambulans_phone">119</string>
+    <string name="pesan">Pesan...</string>
 </resources>
