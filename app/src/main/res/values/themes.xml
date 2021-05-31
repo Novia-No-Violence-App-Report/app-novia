@@ -27,6 +27,7 @@
     <style name="Text.Header1">
         <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">30sp</item>
+        <item name="android:letterSpacing">-0.013</item>
     </style>
 
     <style name="Text.Header2">
@@ -36,7 +37,8 @@
 
     <style name="Text.Header3">
         <item name="fontFamily">@font/poppins_bold</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textSize">19sp</item>
     </style>
 
     <style name="Text.Header4">
@@ -45,7 +47,7 @@
     </style>
 
     <style name="Text.Paragraph">
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">13.5sp</item>
         <item name="fontFamily">@font/poppins_regular</item>
     </style>
 </resources>

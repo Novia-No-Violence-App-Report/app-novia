@@ -28,7 +28,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:lineSpacingExtra="-12sp"
+            android:lineSpacingExtra="-11sp"
             android:gravity="center"
             style="@style/Text.Header1"
             android:text="@string/selamat_datang" />
@@ -52,26 +52,34 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="42dp"
         android:orientation="horizontal" >
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRegisterPage"
             android:text="@string/register"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="7dp"
+            android:layout_marginEnd="9dp"
             android:textSize="16sp"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            android:background="@drawable/button_style_2"
+            android:letterSpacing="0.05"
+            style="@style/Text2"
+            android:textColor="@color/white" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLoginPage"
             android:text="@string/login"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
+            android:layout_marginStart="9dp"
             android:textSize="16sp"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            android:background="@drawable/button_style_1"
+            android:letterSpacing="0.05"
+            style="@style/Text2"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

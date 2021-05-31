@@ -90,15 +90,19 @@
 
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_alignParentBottom="true"
         android:id="@+id/btnSignUp"
         android:text="@string/register_now"
         android:layout_width="220dp"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="126dp"
-        android:textSize="16sp" />
+        android:layout_marginBottom="123dp"
+        android:textSize="16sp"
+        android:background="@drawable/button_style_2"
+        android:letterSpacing="0.05"
+        style="@style/Text2"
+        android:textColor="@color/white" />
 
     <TextView
         android:layout_width="300dp"
@@ -108,7 +112,7 @@
         android:lineSpacingExtra="-2sp"
         android:gravity="center"
         style="@style/Text.Header4"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="52dp"
         android:text="@string/register_question" />
 
 </RelativeLayout>

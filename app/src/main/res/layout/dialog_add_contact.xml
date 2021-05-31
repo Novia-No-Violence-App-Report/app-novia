@@ -43,11 +43,15 @@
         tools:ignore="LabelFor"
         android:importantForAutofill="no" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dialog_submit_contact"
-        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:backgroundTint="@color/novia_red"
-        android:text="@string/submit"/>
+        android:text="@string/submit"
+        android:background="@drawable/button_style_2"
+        android:letterSpacing="0.05"
+        style="@style/Text2"
+        android:textColor="@color/white" />
 </LinearLayout>

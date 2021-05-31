@@ -112,15 +112,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" >
+        app:layout_constraintVertical_bias="0.068" >
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogout"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:text="@string/logout"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_style_3"
+            android:letterSpacing="0.05"
+            style="@style/Text2"
+            android:textColor="@color/novia_red"/>
 
     </RelativeLayout>
 

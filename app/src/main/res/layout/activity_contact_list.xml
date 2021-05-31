@@ -44,6 +44,7 @@
         android:layout_marginStart="20dp"
         android:text="@string/contact_list"
         android:textSize="26sp"
+        android:layout_marginTop="4dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline_top"
         app:layout_constraintStart_toEndOf="@id/contact_list_btn_back"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +62,7 @@
         android:id="@+id/contact_list_fab_add"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_margin="10dp"
+        android:layout_margin="25dp"
         android:contentDescription="@string/sos_button"
         android:src="@drawable/ic_baseline_add_24"
         android:translationZ="10dp"

@@ -59,13 +59,17 @@
             android:inputType="textPassword"
             android:importantForAutofill="no" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
             android:layout_width="135dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/login"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_style_1"
+            android:letterSpacing="0.05"
+            style="@style/Text2"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -74,13 +78,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="35dp"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/login_question"
             style="@style/Text.Header4"
-            android:layout_marginBottom="44dp"
+            android:layout_marginBottom="56dp"
             android:text="@string/login_question"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_card_first" />

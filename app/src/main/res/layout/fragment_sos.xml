@@ -34,6 +34,7 @@
             android:id="@+id/sos_title_text"
             style="@style/Text.Header1"
             android:text="@string/layanan_sos"
+            android:layout_height="45dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
