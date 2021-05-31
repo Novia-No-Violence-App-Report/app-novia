@@ -70,7 +70,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_sapa"
             android:layout_width="0dp"
-            android:layout_height="105dp"
+            android:layout_height="110dp"
             android:layout_marginStart="1dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="8dp"
@@ -89,11 +89,11 @@
                 android:background="@drawable/gradient_1" >
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/ic_icon_chat" />
+                    android:src="@drawable/icon_sapa" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -121,7 +121,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_emergency"
             android:layout_width="0dp"
-            android:layout_height="105dp"
+            android:layout_height="110dp"
             android:layout_marginTop="5dp"
             android:layout_marginStart="1dp"
             android:layout_marginEnd="6dp"
@@ -139,11 +139,11 @@
                 android:background="@drawable/gradient_2" >
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/ic_icon_chat" />
+                    android:src="@drawable/icon_112" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -171,7 +171,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_polisi"
             android:layout_width="0dp"
-            android:layout_height="105dp"
+            android:layout_height="110dp"
             android:layout_marginTop="5dp"
             android:layout_marginStart="3dp"
             android:layout_marginEnd="4dp"
@@ -189,11 +189,11 @@
                 android:background="@drawable/gradient_3" >
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/ic_icon_chat" />
+                    android:src="@drawable/icon_polisi" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -221,7 +221,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_ambulans"
             android:layout_width="0dp"
-            android:layout_height="105dp"
+            android:layout_height="110dp"
             android:layout_marginTop="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="1dp"
@@ -239,11 +239,11 @@
                 android:background="@drawable/gradient_4" >
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/ic_icon_chat" />
+                    android:src="@drawable/icon_ambulans" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -271,17 +271,52 @@
         <TextView
             android:id="@+id/sos_kirim_sms"
             style="@style/Text.Header3"
-            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="35dp"
             android:text="@string/kirim_sms_blast"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_sapa" />
 
         <TextView
-            android:id="@+id/sos_kontak_kerabat"
-            style="@style/Text.Header3"
-            android:layout_marginTop="48dp"
-            android:text="@string/kontak_kerabat"
+            android:id="@+id/sos_kirim_sms_message"
+            style="@style/Text.Paragraph"
+            android:layout_width="275dp"
+            android:text="@string/sebarkan_pesan_darurat"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sos_kirim_sms" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            android:src="@drawable/ic_baseline_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@id/sos_kirim_sms"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_left" />
+
+        <TextView
+            android:id="@+id/sos_kontak_kerabat"
+            style="@style/Text.Header3"
+            android:layout_width="match_parent"
+            android:layout_marginTop="35dp"
+            android:text="@string/kontak_kerabat"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sos_kirim_sms_message" />
+
+        <TextView
+            android:id="@+id/sos_kontak_kerabat_message"
+            style="@style/Text.Paragraph"
+            android:layout_width="match_parent"
+            android:text="@string/tambahkan_kontak_kerabat"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sos_kontak_kerabat" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            android:src="@drawable/ic_baseline_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@id/sos_kontak_kerabat"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_left" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

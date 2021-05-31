@@ -16,11 +16,13 @@
     <string name="berita">Berita</string>
     <string name="layanan_sos">Layanan SOS</string>
     <string name="pilih_opsi_yang_ingin_segera_dilakukan">Pilih opsi yang ingin segera Anda lakukan</string>
-    <string name="gawat_darurat">Gawat Darurat</string>
-    <string name="kirim_sms_blast">Kirim SMS SOS</string>
+    <string name="gawat_darurat">Panggilan Darurat</string>
+    <string name="kirim_sms_blast">Kirim SMS Blast</string>
     <string name="kontak_kerabat">Daftar Kontak</string>
     <string name="anda_terhubung_dengan_bot">Anda terhubung dengan bot</string>
     <string name="contact_list">Daftar Kontak</string>
+    <string name="tambahkan_kontak_kerabat">Tambahkan kontak kerabat terdekat Anda</string>
+    <string name="sebarkan_pesan_darurat">Sebarkan pesan teks darurat ke seluruh daftar kontak kerabat Anda</string>
     <string name="add_contact">Tambah kontak </string>
     <string name="submit">Simpan</string>
     <string name="name">Nama</string>
