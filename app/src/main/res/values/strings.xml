@@ -15,7 +15,7 @@
     <string name="preventif_apabila_mendapat_tindakan_asusila">Preventif apabila mendapat perlakuan asusila</string>
     <string name="berita">Berita</string>
     <string name="layanan_sos">Layanan SOS</string>
-    <string name="pilih_opsi_yang_ingin_segera_dilakukan">Pilih opsi yang ingin segera dilakukan</string>
+    <string name="pilih_opsi_yang_ingin_segera_dilakukan">Pilih opsi yang ingin segera Anda lakukan</string>
     <string name="gawat_darurat">Gawat Darurat</string>
     <string name="kirim_sms_blast">Kirim SMS SOS</string>
     <string name="kontak_kerabat">Daftar Kontak</string>
@@ -24,7 +24,7 @@
     <string name="add_contact">Tambah kontak </string>
     <string name="submit">Simpan</string>
     <string name="name">Nama</string>
-    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="nomor_telepon">Nomor telepon</string>
     <string name="selamat_datang">Selamat datang di Novia!</string>
     <string name="register">Daftar</string>
     <string name="register_now">Daftar sekarang</string>

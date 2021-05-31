@@ -120,19 +120,19 @@ class ContactListActivity : AppCompatActivity() {
     }
 
     private fun transaction() {
-        var msg = "Contact has been "
+        var msg = "Kontak berhasil "
         runBlocking {
             when (state) {
                 1 -> {
-                    msg += "added"
+                    msg += "ditambahkan"
                     viewModel.addEmergencyContact(currentContact)
                 }
                 2 -> {
-                    msg += "updated"
+                    msg += "diperbarui"
                     viewModel.updateEmergencyContact(currentContact)
                 }
                 3 -> {
-                    msg += "deleted"
+                    msg += "dihapus"
                     viewModel.deleteEmergencyContact(currentContact)
                 }
             }

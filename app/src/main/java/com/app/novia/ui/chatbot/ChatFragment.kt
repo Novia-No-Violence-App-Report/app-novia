@@ -46,14 +46,14 @@ class ChatFragment : Fragment() {
             rvChatbot.layoutManager = LinearLayoutManager(context)
             adapter?.addData(
                 ChatEntity(
-                    "Halo, saya Novia, siap membantu anda!",
+                    "Halo, perkenalkan saya Novia! Saya siap membantu Anda.",
                     true,
                     SimpleDateFormat("hh:mm", Locale.UK).format(Date())
                 )
             )
             adapter?.addData(
                 ChatEntity(
-                    "Silakan ketikkan laporan anda dengan cara membalas pesan ini",
+                    "Silakan ketik keluhan Anda dengan cara membalas pesan ini.",
                     true,
                     SimpleDateFormat("hh:mm", Locale.UK).format(Date())
                 )
@@ -63,7 +63,7 @@ class ChatFragment : Fragment() {
                 inputChatbot.text.clear()
                 if (msg == "") {
                     Toast.makeText(
-                        context, "Harap masukkan pesan terlebih dahulu",
+                        context, "Harap masukkan pesan terlebih dahulu.",
                         Toast.LENGTH_SHORT
                     ).show()
                 } else {

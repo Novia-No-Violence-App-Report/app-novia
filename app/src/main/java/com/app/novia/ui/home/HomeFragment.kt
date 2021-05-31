@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.homeGreetingsName.text = StringBuilder("Hi, " + user?.displayName)
+        binding.homeGreetingsName.text = StringBuilder("Hai, " + user?.displayName)
     }
 
     override fun onDestroyView() {
