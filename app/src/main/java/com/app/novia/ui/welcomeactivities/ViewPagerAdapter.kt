@@ -4,11 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.app.novia.R
-import com.bumptech.glide.Glide
 
 class ViewPagerAdapter(private var title: List<String>, private var images: List<Int>) :
     RecyclerView.Adapter<ViewPagerAdapter.Pager2ViewHolder>() {
@@ -32,7 +29,7 @@ class ViewPagerAdapter(private var title: List<String>, private var images: List
     }
 
     override fun onBindViewHolder(holder: ViewPagerAdapter.Pager2ViewHolder, position: Int) {
-        var image = arrayOf(
+        val image = arrayOf(
             R.drawable.chat_logo,
             R.drawable.add_photo,
             R.drawable.chat_logo)

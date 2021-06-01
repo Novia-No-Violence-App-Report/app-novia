@@ -10,7 +10,6 @@ import com.app.novia.ui.login.LoginActivity
 import com.app.novia.ui.mainactivity.MainActivity
 import com.app.novia.ui.registeractivity.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
-import me.relex.circleindicator.CircleIndicator3
 
 class WelcomeScreenActivity : AppCompatActivity() {
 

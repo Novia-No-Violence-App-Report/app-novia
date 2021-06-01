@@ -7,9 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.novia.databinding.ActivityRegisterBinding
 import com.app.novia.ui.mainactivity.MainActivity
-import com.google.firebase.auth.FirebaseAuth
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class RegisterActivity : AppCompatActivity() {
 
