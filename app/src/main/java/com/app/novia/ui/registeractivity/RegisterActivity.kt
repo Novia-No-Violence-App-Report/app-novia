@@ -38,35 +38,49 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.btnSignUp.setOnClickListener {
+            val name = binding.txtName.text.toString()
             val email = binding.txtEmail.text.toString().trim()
             val password = binding.txtPassword.text.toString().trim()
-            val name = binding.txtName.text.toString()
+            val phone = binding.txtPhoneNum.text.toString()
+            val address = binding.txtAddress.text.toString()
 
-            if (email.isEmpty()) {
-                binding.txtEmail.error = "E-mail harus diisi!"
-                binding.txtEmail.requestFocus()
+            if (name.isEmpty()) {
+                binding.txtName.error = "Masukkan nama Anda"
+                binding.txtName.requestFocus()
                 return@setOnClickListener
             }
 
-            if (name.isEmpty()) {
-                binding.txtEmail.error = "Nama harus diisi!"
+            if (email.isEmpty()) {
+                binding.txtEmail.error = "E-mail wajib diisi"
                 binding.txtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.txtEmail.error = "E-mail tidak valid!"
+                binding.txtEmail.error = "Format e-mail tidak valid"
                 binding.txtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             if (password.isEmpty() || password.length < 6) {
-                binding.txtPassword.error = "Password harus lebih dari 6 karakter!"
+                binding.txtPassword.error = "Password harus lebih dari 6 karakter"
                 binding.txtPassword.requestFocus()
                 return@setOnClickListener
             }
 
-            registerViewModel.registerUser(email, password, name)
+            if (address.isEmpty()) {
+                binding.txtAddress.error = "Masukkan alamat rumah Anda"
+                binding.txtAddress.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (phone.isEmpty()) {
+                binding.txtPhoneNum.error = "Masukkan nomor ponsel Anda"
+                binding.txtPhoneNum.requestFocus()
+                return@setOnClickListener
+            }
+
+            registerViewModel.registerUser(name, email, password, address, phone)
 
         }
     }

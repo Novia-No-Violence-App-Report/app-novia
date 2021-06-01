@@ -11,7 +11,7 @@ class RegisterViewModel : ViewModel() {
     val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
     private val _registerResult = MutableLiveData<Pair<Boolean, String?>>()
 
-    fun registerUser(email: String, password: String, name: String) {
+    fun registerUser(name: String, email: String, password: String, address: String, phone: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
@@ -27,7 +27,7 @@ class RegisterViewModel : ViewModel() {
                             _registerResult.postValue(
                                 Pair(
                                     true,
-                                    "Halo, selamat datang " + user.displayName
+                                    "Halo, selamat datang " + user.displayName + "!"
                                 )
                             )
                         } else {

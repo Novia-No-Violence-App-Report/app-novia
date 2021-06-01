@@ -37,19 +37,19 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.txtPassword.text.toString().trim()
 
             if (email.isEmpty()) {
-                binding.txtEmail.error = "E-mail harus diisi!"
+                binding.txtEmail.error = "Silakan isi e-mail Anda"
                 binding.txtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.txtEmail.error = "E-mail tidak valid!"
+                binding.txtEmail.error = "E-mail tidak valid"
                 binding.txtEmail.requestFocus()
                 return@setOnClickListener
             }
 
             if (password.isEmpty() || password.length < 6) {
-                binding.txtPassword.error = "Password harus lebih dari 6 karakter!"
+                binding.txtPassword.error = "Password Anda tidak valid"
                 binding.txtPassword.requestFocus()
                 return@setOnClickListener
             }
