@@ -7,6 +7,7 @@
     tools:context=".ui.chatbot.ChatFragment" >
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
         android:id="@+id/rv_chatbot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -36,5 +37,6 @@
         app:layout_constraintTop_toTopOf="@id/input_chatbot"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:contentDescription="@string/send_icon" />
+        android:contentDescription="@string/send_icon"
+        app:tint="@color/material_on_surface_disabled" />
 </androidx.constraintlayout.widget.ConstraintLayout>

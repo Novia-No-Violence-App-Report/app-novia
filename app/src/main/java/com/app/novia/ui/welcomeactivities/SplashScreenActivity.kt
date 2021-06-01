@@ -15,7 +15,6 @@ class SplashScreenActivity : AppCompatActivity() {
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
-        //TODO: Check whether user signed in or not
         Handler(mainLooper).postDelayed({
             val intent = Intent(this@SplashScreenActivity, WelcomeScreenActivity::class.java)
             startActivity(intent)

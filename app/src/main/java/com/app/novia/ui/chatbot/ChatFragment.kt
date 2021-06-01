@@ -2,20 +2,27 @@ package com.app.novia.ui.chatbot
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.app.novia.R
 import com.app.novia.core.data.source.remote.ApiResponse
 import com.app.novia.core.domain.model.ChatEntity
 import com.app.novia.core.ui.ChatAdapter
 import com.app.novia.databinding.FragmentChatbotBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
@@ -44,20 +51,41 @@ class ChatFragment : Fragment() {
             rvChatbot.itemAnimator = null
             rvChatbot.setHasFixedSize(true)
             rvChatbot.layoutManager = LinearLayoutManager(context)
-            adapter?.addData(
-                ChatEntity(
-                    "Halo, perkenalkan saya Novia! Saya siap membantu Anda.",
-                    true,
-                    SimpleDateFormat("hh:mm", Locale.UK).format(Date())
+            lifecycleScope.launch {
+                delay(500L)
+                adapter?.addData(
+                    ChatEntity(
+                        "Halo, perkenalkan saya Novia! Saya siap membantu Anda.",
+                        true,
+                        SimpleDateFormat("hh:mm", Locale.UK).format(Date())
+                    )
                 )
-            )
-            adapter?.addData(
-                ChatEntity(
-                    "Silakan ketik keluhan Anda dengan cara membalas pesan ini.",
-                    true,
-                    SimpleDateFormat("hh:mm", Locale.UK).format(Date())
+                delay(1000L)
+                adapter?.addData(
+                    ChatEntity(
+                        "Silakan ketik keluhan Anda dengan cara membalas pesan ini.",
+                        true,
+                        SimpleDateFormat("hh:mm", Locale.UK).format(Date())
+                    )
                 )
-            )
+            }
+            inputChatbot.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {}
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    switchSendButtonColor(s)
+                }
+
+                override fun afterTextChanged(s: Editable?) {
+
+                }
+
+            })
             btnSendChatbot.setOnClickListener {
                 val msg = inputChatbot.text.toString()
                 inputChatbot.text.clear()
@@ -74,6 +102,13 @@ class ChatFragment : Fragment() {
             }
         }
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun switchSendButtonColor(s: CharSequence?) {
+        if(s?.length!! == 0)
+            binding.btnSendChatbot.setColorFilter(ContextCompat.getColor(requireContext(), R.color.material_on_surface_disabled), android.graphics.PorterDuff.Mode.SRC_IN)
+        else
+            binding.btnSendChatbot.setColorFilter(ContextCompat.getColor(requireContext(), R.color.novia_red), android.graphics.PorterDuff.Mode.SRC_IN)
     }
 
     override fun onDestroyView() {
