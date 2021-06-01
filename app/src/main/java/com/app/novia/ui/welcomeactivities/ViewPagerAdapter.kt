@@ -33,9 +33,9 @@ class ViewPagerAdapter(private var title: List<String>, private var images: List
 
     override fun onBindViewHolder(holder: ViewPagerAdapter.Pager2ViewHolder, position: Int) {
         var image = arrayOf(
-            R.drawable.chat_logo,
-            R.drawable.add_photo,
-            R.drawable.chat_logo)
+            R.drawable.welcomeillustration_1,
+            R.drawable.welcomeillustration_2,
+            R.drawable.welcomeillustration_3)
         holder.itemImage.setImageResource(image[position])
     }
 
