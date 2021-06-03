@@ -3,15 +3,13 @@ package com.app.novia.core.domain.model
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class ChatEntity(
+data class UserResponseEntity (
+    @field:SerializedName("time")
+    val time: String? = null,
 
-    @field:SerializedName("msg")
-    val message: String? = null,
-
-    var senderIsBot: Boolean? = false,
+    @field:SerializedName("user_id")
+    var userId: String? = null,
 
     @field:SerializedName("status_code")
     var statusCode: Int? = 0,
-
-    var timeStamp: String
 ) : Serializable

@@ -1,12 +1,15 @@
 package com.app.novia.core
 
+import android.util.Log
 import com.app.novia.core.data.source.local.LocalDataSource
 import com.app.novia.core.data.source.remote.ApiResponse
 import com.app.novia.core.data.source.remote.RemoteDataSource
 import com.app.novia.core.domain.model.ChatEntity
 import com.app.novia.core.domain.model.EmergencyContactEntity
+import com.app.novia.core.domain.model.UserResponseEntity
 import com.app.novia.core.domain.repository.INoviaRepository
 import com.app.novia.core.utils.AppExecutors
+import com.google.gson.JsonObject
 import kotlinx.coroutines.flow.Flow
 
 class Repository(
@@ -30,7 +33,12 @@ class Repository(
         return localDataSource.getAllEmergencyContact()
     }
 
-    override suspend fun sendChat(message: String?): Flow<ApiResponse<ChatEntity>> {
+    override suspend fun sendChat(message: JsonObject?): Flow<ApiResponse<ChatEntity>> {
         return remoteDataSource.sendChat(message)
+    }
+
+    override suspend fun addUser(user: JsonObject?): Flow<ApiResponse<UserResponseEntity>> {
+        Log.d("JSSONUSER2", user.toString())
+        return remoteDataSource.addUser(user)
     }
 }

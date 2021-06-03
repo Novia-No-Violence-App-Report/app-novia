@@ -21,6 +21,8 @@ import com.app.novia.core.data.source.remote.ApiResponse
 import com.app.novia.core.domain.model.ChatEntity
 import com.app.novia.core.ui.ChatAdapter
 import com.app.novia.databinding.FragmentChatbotBinding
+import com.google.firebase.auth.FirebaseUser
+import com.google.gson.JsonObject
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -34,6 +36,7 @@ class ChatFragment : Fragment() {
     private var _binding: FragmentChatbotBinding? = null
     private val adapter by lazy { context?.let { ChatAdapter(it) } }
     private val binding get() = _binding!!
+    private var user: FirebaseUser? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,6 +49,10 @@ class ChatFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        chatViewModel.auth.currentUser.let {
+            user = it
+        }
+
         with(binding) {
             rvChatbot.adapter = adapter
             rvChatbot.itemAnimator = null
@@ -57,6 +64,7 @@ class ChatFragment : Fragment() {
                     ChatEntity(
                         "Halo, perkenalkan saya Novia! Saya siap membantu Anda.",
                         true,
+                        0,
                         SimpleDateFormat("hh:mm", Locale.UK).format(Date())
                     )
                 )
@@ -65,6 +73,7 @@ class ChatFragment : Fragment() {
                     ChatEntity(
                         "Silakan ketik keluhan Anda dengan cara membalas pesan ini.",
                         true,
+                        0,
                         SimpleDateFormat("hh:mm", Locale.UK).format(Date())
                     )
                 )
@@ -75,7 +84,8 @@ class ChatFragment : Fragment() {
                     start: Int,
                     count: Int,
                     after: Int
-                ) {}
+                ) {
+                }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     switchSendButtonColor(s)
@@ -105,10 +115,20 @@ class ChatFragment : Fragment() {
     }
 
     private fun switchSendButtonColor(s: CharSequence?) {
-        if(s?.length!! == 0)
-            binding.btnSendChatbot.setColorFilter(ContextCompat.getColor(requireContext(), R.color.material_on_surface_disabled), android.graphics.PorterDuff.Mode.SRC_IN)
+        if (s?.length!! == 0)
+            binding.btnSendChatbot.setColorFilter(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.material_on_surface_disabled
+                ), android.graphics.PorterDuff.Mode.SRC_IN
+            )
         else
-            binding.btnSendChatbot.setColorFilter(ContextCompat.getColor(requireContext(), R.color.novia_red), android.graphics.PorterDuff.Mode.SRC_IN)
+            binding.btnSendChatbot.setColorFilter(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.novia_red
+                ), android.graphics.PorterDuff.Mode.SRC_IN
+            )
     }
 
     override fun onDestroyView() {
@@ -119,9 +139,13 @@ class ChatFragment : Fragment() {
     @SuppressLint("SimpleDateFormat")
     private suspend fun sendChat(msg: String?) {
         val currentDate = SimpleDateFormat("hh:mm", Locale.UK).format(Date())
-        adapter?.addData(ChatEntity(msg, false, currentDate.toString()))
+        adapter?.addData(ChatEntity(msg, false, 0, currentDate.toString()))
         adapter?.itemCount?.minus(1)?.let { binding.rvChatbot.scrollToPosition(it) }
-        chatViewModel.sendChat(msg).observeOnce(viewLifecycleOwner, { response ->
+
+        val jsonReport = JsonObject()
+        jsonReport.addProperty("report", msg)
+        jsonReport.addProperty("user_id", user?.uid)
+        chatViewModel.sendChat(jsonReport).observeOnce(viewLifecycleOwner, { response ->
             if (response != null) {
                 when (response) {
                     is ApiResponse.Success -> {

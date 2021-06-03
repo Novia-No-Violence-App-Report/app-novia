@@ -39,7 +39,7 @@ val networkModule = module {
     }
     single {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://asia-southeast2-research-station.cloudfunctions.net/")
+            .baseUrl("http://192.168.100.23:8080/api/")
             .client(get())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

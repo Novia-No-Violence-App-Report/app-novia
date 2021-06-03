@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 "LLISTENER DEST",
                 destination.toString()
             )
+
             if (destination.label == "Chat Aduan") {
                 true.chatMode()
             } else {

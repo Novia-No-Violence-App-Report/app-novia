@@ -2,14 +2,26 @@ package com.app.novia.ui.registeractivity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import com.app.novia.core.data.source.remote.ApiResponse
+import com.app.novia.core.domain.model.UserModel
 import com.app.novia.databinding.ActivityRegisterBinding
 import com.app.novia.ui.mainactivity.MainActivity
+import com.google.gson.JsonObject
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
+
+    private var registeredUser = UserModel()
 
     private val binding: ActivityRegisterBinding by lazy {
         ActivityRegisterBinding.inflate(
@@ -25,7 +37,29 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         registerViewModel.registerResult().observe(this) {
-            Toast.makeText(this, it.second, Toast.LENGTH_SHORT).show()
+            lifecycleScope.launch {
+                val addToDbUser = JsonObject()
+                addToDbUser.addProperty("name", registeredUser.name)
+                addToDbUser.addProperty("address", registeredUser.address)
+                addToDbUser.addProperty("email", registeredUser.email)
+                addToDbUser.addProperty("phone", registeredUser.phone)
+                addToDbUser.addProperty("user_id", registerViewModel.auth.uid)
+
+                registerViewModel.addUser(addToDbUser).observeOnce(this@RegisterActivity, { response ->
+                    if (response != null) {
+                        when (response) {
+                            is ApiResponse.Success -> {
+                                if (response.data.statusCode == 204){
+                                    Log.d("API RESPONSE", "SUCCESS ADDING USER DATA")
+                                }
+                            }
+                            is ApiResponse.Empty -> Log.d("API RESPONSE", "EMPTY")
+                            is ApiResponse.Error -> Log.d("API RESPONSE", "ERROR ${response.errorMessage}")
+                        }
+                    }
+                })
+            }
+            Toast.makeText(this@RegisterActivity, it.second, Toast.LENGTH_SHORT).show()
             if (it.first) {
                 Intent(this@RegisterActivity, MainActivity::class.java).also { it1 ->
                     it1.flags =
@@ -78,7 +112,8 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            registerViewModel.registerUser(name, email, password, address, phone)
+            registeredUser = UserModel(name, email, password, address, phone)
+            registerViewModel.registerUser(registeredUser)
 
         }
     }
@@ -91,5 +126,14 @@ class RegisterActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+    }
+
+    private fun <T> LiveData<T>.observeOnce(lifecycleOwner: LifecycleOwner, observer: Observer<T>) {
+        observe(lifecycleOwner, object : Observer<T> {
+            override fun onChanged(t: T?) {
+                observer.onChanged(t)
+                removeObserver(this)
+            }
+        })
     }
 }

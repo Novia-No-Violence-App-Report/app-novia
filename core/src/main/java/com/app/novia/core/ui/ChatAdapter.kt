@@ -15,7 +15,7 @@ class ChatAdapter(private val context: Context) :
 
     private var list = ArrayList<ChatEntity>()
     fun addData(chatMessage: ChatEntity?) {
-        if (chatMessage == null) return
+        if (chatMessage == null || chatMessage.statusCode == 405) return
         list.add(chatMessage)
         notifyItemInserted(list.size)
     }

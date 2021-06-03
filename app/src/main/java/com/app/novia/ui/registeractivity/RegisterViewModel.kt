@@ -1,24 +1,29 @@
 package com.app.novia.ui.registeractivity
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.app.novia.core.domain.model.UserModel
+import com.app.novia.core.domain.usecase.NoviaUseCase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.gson.JsonObject
 
-class RegisterViewModel : ViewModel() {
+class RegisterViewModel constructor(private val useCase: NoviaUseCase) : ViewModel() {
 
     val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
     private val _registerResult = MutableLiveData<Pair<Boolean, String?>>()
 
-    fun registerUser(name: String, email: String, password: String, address: String, phone: String) {
-        auth.createUserWithEmailAndPassword(email, password)
+    suspend fun addUser(user: JsonObject?) = useCase.addUser(user).asLiveData()
+
+    fun registerUser(
+        userModel: UserModel
+    ) {
+        auth.createUserWithEmailAndPassword(userModel.email, userModel.password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     val user = auth.currentUser
 
                     val profileUpdates = UserProfileChangeRequest.Builder()
-                        .setDisplayName(name)
+                        .setDisplayName(userModel.name)
 //                        .setPhotoUri()
                         .build()
 
