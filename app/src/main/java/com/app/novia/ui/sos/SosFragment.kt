@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.app.novia.databinding.FragmentSosBinding
 import com.app.novia.ui.contactlist.ContactListActivity
+import com.google.firebase.auth.FirebaseUser
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SosFragment : Fragment() {
@@ -17,6 +18,8 @@ class SosFragment : Fragment() {
     private var _binding: FragmentSosBinding? = null
     private val binding get() = _binding!!
 
+    private var user: FirebaseUser? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,34 +27,45 @@ class SosFragment : Fragment() {
     ): View {
 
         _binding = FragmentSosBinding.inflate(inflater, container, false)
+
+        viewModel.auth.currentUser.let {
+            user = it
+        }
+
         initializeViews()
         return binding.root
+
+
     }
 
     private fun initializeViews() {
-        val callIntent = Intent(Intent.ACTION_DIAL)
-        val contactIntent = Intent(context, ContactListActivity::class.java)
         binding.sosKontakKerabat.setOnClickListener {
-            startActivity(contactIntent)
+            val intent = Intent(context, ContactListActivity::class.java)
+            startActivity(intent)
         }
         binding.sosKontakKerabatMessage.setOnClickListener {
-            startActivity(contactIntent)
+            val intent = Intent(context, ContactListActivity::class.java)
+            startActivity(intent)
         }
         binding.cardSapa.setOnClickListener {
-            callIntent.data = Uri.parse("tel:129")
-            startActivity(callIntent)
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:129")
+            startActivity(intent)
         }
         binding.cardEmergency.setOnClickListener {
-            callIntent.data = Uri.parse("tel:112")
-            startActivity(callIntent)
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:112")
+            startActivity(intent)
         }
         binding.cardPolisi.setOnClickListener {
-            callIntent.data = Uri.parse("tel:110")
-            startActivity(callIntent)
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:110")
+            startActivity(intent)
         }
         binding.cardAmbulans.setOnClickListener {
-            callIntent.data = Uri.parse("tel:119")
-            startActivity(callIntent)
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:119")
+            startActivity(intent)
         }
         viewModel.getEmergencyContacts().observe(viewLifecycleOwner, {
             var urlString = "smsto:"
@@ -63,18 +77,12 @@ class SosFragment : Fragment() {
 
             binding.sosKirimSms.setOnClickListener {
                 val smsIntent = Intent(Intent.ACTION_SENDTO, Uri.parse(urlString))
-                smsIntent.putExtra(
-                    "sms_body",
-                    "Halo, aku sedang dalam keadaan darurat! Aku butuh bantuanmu segera.\n\n________\nIni merupakan pesan otomatis dari Layanan Novia. Jika kamu mengenal pemilik nomor ini, mohon untuk menghubungi kembali atau segera ambil tindakan siaga."
-                )
+                smsIntent.putExtra("sms_body", "Halo, aku " + user?.displayName + " sedang dalam keadaan darurat! Aku butuh bantuanmu segera.\n\n________\nIni adalah pesan otomatis dari layanan Novia. Jika kamu mengenal pemilik nomor ini, mohon untuk menghubungi kembali atau segera ambil tindakan siaga.")
                 startActivity(smsIntent)
             }
             binding.sosKirimSmsMessage.setOnClickListener {
                 val smsIntent = Intent(Intent.ACTION_SENDTO, Uri.parse(urlString))
-                smsIntent.putExtra(
-                    "sms_body",
-                    "Halo, aku sedang dalam keadaan darurat! Aku butuh bantuanmu segera.\n\n________\nIni merupakan pesan otomatis dari Layanan Novia. Jika kamu mengenal pemilik nomor ini, mohon untuk menghubungi kembali atau segera ambil tindakan siaga."
-                )
+                smsIntent.putExtra("sms_body", "Halo, aku " + user?.displayName + " sedang dalam keadaan darurat! Aku butuh bantuanmu segera.\n\n________\nIni adalah pesan otomatis dari layanan Novia. Jika kamu mengenal pemilik nomor ini, mohon untuk menghubungi kembali atau segera ambil tindakan siaga.")
                 startActivity(smsIntent)
             }
         })

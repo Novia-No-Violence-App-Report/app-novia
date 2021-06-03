@@ -61,4 +61,11 @@
     <string name="_20_mei_2021">20 Mei 2021</string>
     <string name="baca_lebih_lanjut">Baca lebih lanjut</string>
     <string name="viva_pihak_kepolisian_sektor_serpong_polres_tangerang_selatan_mengamankan_pelaku_penganiayaan_terhadap_seorang_anak_di_jalan_pondok_jagung_kecamatan_serpong_kota_tangerang_selatan_r_ndikonfirmasi">VIVA Pihak Kepolisian Sektor Serpong, Polres Tangerang Selatan, mengamankan pelaku penganiayaan terhadap seorang anak di Jalan Pondok Jagung, Kecamatan Serpong, Kota Tangerang Selatan.</string>
+    <string name="banner_ask">Kami siap mendengarmu</string>
+    <string name="banner_ask2">#SaatnyaBersuara ></string>
+    <string name="next_button">Next Button</string>
+    <string name="chatbot_banner">Chatbot Banner</string>
+    <string name="welcome_image">Welcome Image</string>
+    <string name="gambar_tips_dan_trik">Gambar tips dan trik</string>
+    <string name="lorem_ipsum_dolor_sit_amet_blabla_consectum">Lorem ipsum dolor sit amet blabla consectum</string>
 </resources>

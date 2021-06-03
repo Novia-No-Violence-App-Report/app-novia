@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/container">
 
     <ImageView
         android:id="@+id/imgWelcome"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:src="@mipmap/ic_launcher_round"
+        android:src="@drawable/welcomeillustration_1"
         android:focusable="true"
-        android:foreground="?selectableItemBackground"/>
+        android:foreground="?selectableItemBackground"
+        android:contentDescription="@string/welcome_image"
+        tools:ignore="UnusedAttribute" />
 
 </RelativeLayout>
