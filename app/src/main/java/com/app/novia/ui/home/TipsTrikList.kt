@@ -4,18 +4,18 @@ object TipsTrikList {
     private var data = arrayOf(
         arrayOf(
             "https://www.masakapahariini.com/wp-content/uploads/2018/04/resep-rawon-daging-780x440.jpg",
-            "1",
-            "Lorem ipsum dolor sit amet blabla consecstum"
+            "Konfrontasi",
+            "Bersikap tegas pada pelaku dan lakukan sesuatu"
         ),
         arrayOf(
             "https://www.masakapahariini.com/wp-content/uploads/2018/04/resep-rawon-daging-780x440.jpg",
-            "2",
-            "Lorem ipsum dolor sit amet blabla consecstum"
+            "Lindungi diri",
+            "Selalu waspada dimana pun Anda berada"
         ),
         arrayOf(
             "https://www.masakapahariini.com/wp-content/uploads/2018/04/resep-rawon-daging-780x440.jpg",
-            "3",
-            "Lorem ipsum dolor sit amet blabla consecstum"
+            "Hubungi",
+            "Keluarga atau kerabat Anda dengan segera"
         )
     )
 

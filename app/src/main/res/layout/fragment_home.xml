@@ -50,7 +50,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/home_card_first"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="147dp"
             android:layout_marginTop="25dp"
             android:elevation="10dp"
             app:cardCornerRadius="10dp"
@@ -58,7 +58,7 @@
             app:layout_constraintRight_toLeftOf="@id/guideline_right"
             app:layout_constraintTop_toBottomOf="@id/home_greetings_message" >
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -66,13 +66,40 @@
                 android:background="@drawable/gradient_1" >
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/icon_sapa" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:layout_marginStart="70dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ask_banner" />
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/bannertext1"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="26sp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="20dp"
+                    style="@style/Text2"
+                    android:lineSpacingExtra="-11sp"
+                    android:textColor="@color/white"
+                    android:text="@string/banner_ask" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:background="@drawable/button_style_1"
+                    android:layout_width="160dp"
+                    android:layout_height="25dp"
+                    android:textSize="12sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="5dp"
+                    style="@style/Text"
+                    android:lineSpacingExtra="-11sp"
+                    android:textColor="@color/white"
+                    android:layout_below="@+id/bannertext1"
+                    android:text="@string/banner_ask2" />
+
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 

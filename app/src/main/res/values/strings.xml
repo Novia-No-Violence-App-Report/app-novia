@@ -55,4 +55,6 @@
     <string name="ambulans">Ambulans</string>
     <string name="ambulans_phone">119</string>
     <string name="pesan">Pesan...</string>
+    <string name="banner_ask">Kami siap mendengarmu</string>
+    <string name="banner_ask2">#SaatnyaBersuara ></string>
 </resources>

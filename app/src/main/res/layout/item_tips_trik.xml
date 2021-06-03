@@ -26,14 +26,14 @@
 
         <TextView
             android:id="@+id/titleTipsTrik"
-            tools:text="1"
+            tools:text="Lorem Ipsum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="18dp"
             android:layout_marginLeft="110dp"
             style="@style/Text2"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textColor="@color/novia_blue"
+            android:textSize="17sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
@@ -43,8 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="46dp"
             android:layout_marginLeft="110dp"
+            android:layout_marginRight="7dp"
             android:lineSpacingExtra="-2.5sp"
-            android:textColor="@color/novia_purple"
+            android:textColor="@color/gray"
             android:textSize="13sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
