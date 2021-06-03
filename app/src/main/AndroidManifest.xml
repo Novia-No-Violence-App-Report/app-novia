@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.app.novia">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -14,10 +15,14 @@
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/novia"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Novia">
+        android:theme="@style/Theme.Novia"
+        android:usesCleartextTraffic="true"
+        tools:ignore="UnusedAttribute">
+        <activity
+            android:name=".NewsActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.contactlist.ContactListActivity"
             android:exported="true" />

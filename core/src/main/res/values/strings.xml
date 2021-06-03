@@ -7,4 +7,7 @@
     <string name="delete_button">Tombol Hapus</string>
     <string name="edit_button">Tombol Ubah</string>
     <string name="edit_contact">Ubah Kontak</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="ayah_penganiaya_anak_kandung_di_tangsel_ditangkap">Ayah Penganiaya Anak Kandung di Tangsel Ditangkap</string>
+    <string name="gambar_berita">Gambar berita</string>
 </resources>
