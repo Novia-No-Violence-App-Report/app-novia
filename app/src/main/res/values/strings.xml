@@ -68,4 +68,10 @@
     <string name="welcome_image">Welcome Image</string>
     <string name="gambar_tips_dan_trik">Gambar tips dan trik</string>
     <string name="lorem_ipsum_dolor_sit_amet_blabla_consectum">Lorem ipsum dolor sit amet blabla consectum</string>
+    <string name="gambar_telepon_sapa">Gambar Telepon SAPA</string>
+    <string name="gambar_telepon_darurat_112">Gambar Telepon Darurat 112</string>
+    <string name="gambar_telepon_polisi_110">Gambar Telepon Polisi 110</string>
+    <string name="gambar_telepon_ambulans_119">Gambar Telepon Ambulans 119</string>
+    <string name="buat_sms_blast">Buat SMS Blast</string>
+    <string name="buka_daftar_kontak_sos">Buka Daftar Kontak SOS</string>
 </resources>

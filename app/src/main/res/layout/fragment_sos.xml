@@ -91,9 +91,9 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/icon_sapa" />
+                    android:src="@drawable/icon_sapa"
+                    android:contentDescription="@string/gambar_telepon_sapa" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -141,9 +141,9 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/icon_112" />
+                    android:src="@drawable/icon_112"
+                    android:contentDescription="@string/gambar_telepon_darurat_112" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -191,9 +191,9 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/icon_polisi" />
+                    android:src="@drawable/icon_polisi"
+                    android:contentDescription="@string/gambar_telepon_polisi_110" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -241,9 +241,9 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="5dp"
-                    android:src="@drawable/icon_ambulans" />
+                    android:src="@drawable/icon_ambulans"
+                    android:contentDescription="@string/gambar_telepon_ambulans_119" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -291,7 +291,8 @@
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             android:src="@drawable/ic_baseline_arrow_right"
             app:layout_constraintBottom_toBottomOf="@id/sos_kirim_sms"
-            app:layout_constraintLeft_toLeftOf="@id/guideline_left" />
+            app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+            android:contentDescription="@string/buat_sms_blast" />
 
         <TextView
             android:id="@+id/sos_kontak_kerabat"
@@ -316,7 +317,8 @@
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             android:src="@drawable/ic_baseline_arrow_right"
             app:layout_constraintBottom_toBottomOf="@id/sos_kontak_kerabat"
-            app:layout_constraintLeft_toLeftOf="@id/guideline_left" />
+            app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+            android:contentDescription="@string/buka_daftar_kontak_sos" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
