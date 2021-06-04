@@ -1,13 +1,17 @@
 package com.app.novia.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.app.novia.R
 import com.app.novia.databinding.FragmentHomeBinding
 import com.app.novia.databinding.ItemTipsTrikBinding
 import com.google.firebase.auth.FirebaseUser
@@ -46,7 +50,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.homeGreetingsName.text = StringBuilder("Hai, " + user?.displayName)
-
+        binding.homeCardBanner.setOnClickListener {
+            Log.d("CLIICKED", "CLICK")
+            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_chatbot)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

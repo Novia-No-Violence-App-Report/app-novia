@@ -9,7 +9,14 @@
         android:id="@+id/navigation_home"
         android:name="com.app.novia.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_chatbot"
+            app:destination="@id/navigation_chatbot" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_sos"
+            app:destination="@id/navigation_sos" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_sos"

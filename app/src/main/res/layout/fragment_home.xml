@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@id/home_greetings_name" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/home_card_first"
+            android:id="@+id/home_card_banner"
             android:layout_width="match_parent"
             android:layout_height="147dp"
             android:layout_marginTop="25dp"
@@ -68,11 +68,11 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:layout_marginStart="70dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ask_banner"
-                    android:contentDescription="@string/chatbot_banner" />
+                    android:layout_marginStart="70dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/chatbot_banner"
+                    android:src="@drawable/ask_banner" />
 
                 <TextView
                     android:id="@+id/bannertext1"
@@ -87,18 +87,18 @@
                     android:text="@string/banner_ask" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:background="@drawable/button_style_1"
+                    style="@style/Text"
                     android:layout_width="160dp"
                     android:layout_height="25dp"
-                    android:textSize="12sp"
+                    android:layout_below="@+id/bannertext1"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="5dp"
-                    style="@style/Text"
+                    android:background="@drawable/button_style_1"
                     android:lineSpacingExtra="-11sp"
+                    android:text="@string/banner_ask2"
                     android:textColor="@color/white"
-                    android:layout_below="@+id/bannertext1"
-                    android:text="@string/banner_ask2" />
+                    android:textSize="12sp" />
 
             </RelativeLayout>
 
@@ -110,7 +110,7 @@
             android:layout_marginTop="35dp"
             android:text="@string/tips_trik"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_card_first" />
+            app:layout_constraintTop_toBottomOf="@id/home_card_banner" />
 
         <TextView
             android:id="@+id/home_tips_trik_title_message"
