@@ -3,6 +3,7 @@ package com.app.novia.core.domain.usecase
 import com.app.novia.core.data.source.remote.ApiResponse
 import com.app.novia.core.domain.model.ChatEntity
 import com.app.novia.core.domain.model.EmergencyContactEntity
+import com.app.novia.core.domain.model.NewsResponse
 import com.app.novia.core.domain.model.UserResponseEntity
 import com.app.novia.core.domain.repository.INoviaRepository
 import com.google.gson.JsonObject
@@ -31,5 +32,9 @@ class NoviaInteractor(private val repository: INoviaRepository) : NoviaUseCase {
 
     override suspend fun addUser(user: JsonObject?): Flow<ApiResponse<UserResponseEntity>> {
         return repository.addUser(user)
+    }
+
+    override suspend fun getNews(): Flow<ApiResponse<NewsResponse>> {
+        return repository.getNews()
     }
 }

@@ -1,11 +1,11 @@
 package com.app.novia.core
 
-import android.util.Log
 import com.app.novia.core.data.source.local.LocalDataSource
 import com.app.novia.core.data.source.remote.ApiResponse
 import com.app.novia.core.data.source.remote.RemoteDataSource
 import com.app.novia.core.domain.model.ChatEntity
 import com.app.novia.core.domain.model.EmergencyContactEntity
+import com.app.novia.core.domain.model.NewsResponse
 import com.app.novia.core.domain.model.UserResponseEntity
 import com.app.novia.core.domain.repository.INoviaRepository
 import com.app.novia.core.utils.AppExecutors
@@ -38,7 +38,10 @@ class Repository(
     }
 
     override suspend fun addUser(user: JsonObject?): Flow<ApiResponse<UserResponseEntity>> {
-        Log.d("JSSONUSER2", user.toString())
         return remoteDataSource.addUser(user)
+    }
+
+    override suspend fun getNews(): Flow<ApiResponse<NewsResponse>> {
+        return remoteDataSource.getNews()
     }
 }

@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="24dp">
+        android:paddingBottom="36dp">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_left"
@@ -56,14 +57,14 @@
             app:cardCornerRadius="10dp"
             app:layout_constraintLeft_toLeftOf="@id/guideline_left"
             app:layout_constraintRight_toLeftOf="@id/guideline_right"
-            app:layout_constraintTop_toBottomOf="@id/home_greetings_message" >
+            app:layout_constraintTop_toBottomOf="@id/home_greetings_message">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/gradient_1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:background="@drawable/gradient_1" >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -76,17 +77,18 @@
 
                 <TextView
                     android:id="@+id/bannertext1"
+                    style="@style/Text2"
                     android:layout_width="260dp"
                     android:layout_height="wrap_content"
-                    android:textSize="26sp"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="20dp"
-                    style="@style/Text2"
                     android:lineSpacingExtra="-11sp"
+                    android:text="@string/banner_ask"
                     android:textColor="@color/white"
-                    android:text="@string/banner_ask" />
+                    android:textSize="26sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_saatnyabersuara"
                     style="@style/Text"
                     android:layout_width="160dp"
                     android:layout_height="25dp"
@@ -127,8 +129,8 @@
             android:elevation="10dp"
             app:layout_constraintLeft_toLeftOf="@id/guideline_left"
             app:layout_constraintRight_toLeftOf="@id/guideline_right"
-            tools:listitem="@layout/item_tips_trik"
-            app:layout_constraintTop_toBottomOf="@id/home_tips_trik_title_message" />
+            app:layout_constraintTop_toBottomOf="@id/home_tips_trik_title_message"
+            tools:listitem="@layout/item_tips_trik" />
 
         <TextView
             android:id="@+id/home_berita_title"
@@ -144,7 +146,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_berita_title" />
+            app:layout_constraintTop_toBottomOf="@id/home_berita_title"
+            tools:listitem="@layout/news_row" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

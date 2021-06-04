@@ -91,28 +91,28 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_alignParentBottom="true"
         android:id="@+id/btnSignUp"
-        android:text="@string/register_now"
+        style="@style/Text2"
         android:layout_width="220dp"
-        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="123dp"
-        android:textSize="16sp"
         android:background="@drawable/button_style_2"
         android:letterSpacing="0.05"
-        style="@style/Text2"
-        android:textColor="@color/white" />
+        android:text="@string/register_now"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
     <TextView
+        android:id="@+id/login_question"
+        style="@style/Text.Header4"
         android:layout_width="300dp"
         android:layout_alignParentBottom="true"
-        android:id="@+id/login_question"
         android:layout_centerHorizontal="true"
-        android:lineSpacingExtra="-2sp"
-        android:gravity="center"
-        style="@style/Text.Header4"
         android:layout_marginBottom="52dp"
+        android:gravity="center"
+        android:lineSpacingExtra="-2sp"
         android:text="@string/register_question" />
 
 </RelativeLayout>

@@ -5,10 +5,10 @@ import java.io.Serializable
 
 data class NewsResponse(
     @field:SerializedName("articles")
-    val articles: List<Articles>? = null
+    val articles: List<Article>? = null
 )
 
-data class Articles(
+data class Article(
 
     @field:SerializedName("source")
     val source: Source? = null,
