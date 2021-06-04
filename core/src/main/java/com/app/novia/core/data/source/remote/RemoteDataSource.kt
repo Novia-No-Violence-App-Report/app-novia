@@ -1,6 +1,5 @@
 package com.app.novia.core.data.source.remote
 
-import android.util.Log
 import com.app.novia.core.domain.model.ChatEntity
 import com.app.novia.core.domain.model.NewsResponse
 import com.app.novia.core.domain.model.UserResponseEntity

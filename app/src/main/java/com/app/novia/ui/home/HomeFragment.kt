@@ -25,11 +25,10 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModel()
     private var _binding: FragmentHomeBinding? = null
-
-    private val binding get() = _binding!!
     private var user: FirebaseUser? = null
-
     private var list: ArrayList<TipsTrikModel> = arrayListOf()
+    private val newsAdapter = NewsAdapter()
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,47 +41,12 @@ class HomeFragment : Fragment() {
         homeViewModel.auth.currentUser.let {
             user = it
         }
-
-        binding.rvTipsTrik.setHasFixedSize(true)
-
-        list.addAll(TipsTrikList.listData)
-
-
+        addRecyclerViewsContent()
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.homeGreetingsName.text = StringBuilder("Hai, " + user?.displayName)
-        binding.homeCardBanner.setOnClickListener {
-            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_chatbot)
-        }
-        binding.btnSaatnyabersuara.setOnClickListener {
-            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_chatbot)
-        }
-        showRecyclerViews()
-    }
-
-    private fun showRecyclerViews() {
-        // Tips & Trik
-        binding.rvTipsTrik.layoutManager =
-            LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-        val tipsTrikAdapter = TipsTrikAdapter(list)
-        binding.rvTipsTrik.adapter = tipsTrikAdapter
-
-        // Berita
-        binding.homeBeritaRv.layoutManager = LinearLayoutManager(context)
-        val newsAdapter = NewsAdapter()
-        binding.homeBeritaRv.setHasFixedSize(true)
-        binding.homeBeritaRv.adapter = newsAdapter
-        newsAdapter.setOnItemClickCallback(object : NewsAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: Article) {
-                val intent = Intent(context, NewsActivity::class.java)
-                intent.putExtra("ARTICLE", data)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                context?.startActivity(intent)
-            }
-        })
+    private fun addRecyclerViewsContent() {
+        list.addAll(TipsTrikList.listData)
 
         lifecycleScope.launch {
             homeViewModel.getNews().observe(viewLifecycleOwner, { response ->
@@ -98,6 +62,41 @@ class HomeFragment : Fragment() {
                             "ERROR ${response.errorMessage}"
                         )
                     }
+                }
+            })
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.homeGreetingsName.text = StringBuilder("Hai, " + user?.displayName)
+        binding.homeCardBanner.setOnClickListener {
+            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_chatbot)
+        }
+        binding.btnSaatnyabersuara.setOnClickListener {
+            view.findNavController().navigate(R.id.action_navigation_home_to_navigation_chatbot)
+        }
+        showRecyclerViews()
+    }
+
+    private fun showRecyclerViews() {
+        with(binding) {
+            // Tips & Trik
+            rvTipsTrik.layoutManager =
+                LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            val tipsTrikAdapter = TipsTrikAdapter(list)
+            rvTipsTrik.adapter = tipsTrikAdapter
+
+            // Berita
+            homeBeritaRv.layoutManager = LinearLayoutManager(context)
+            homeBeritaRv.setHasFixedSize(true)
+            homeBeritaRv.adapter = newsAdapter
+            newsAdapter.setOnItemClickCallback(object : NewsAdapter.OnItemClickCallback {
+                override fun onItemClicked(data: Article) {
+                    val intent = Intent(context, NewsActivity::class.java)
+                    intent.putExtra("ARTICLE", data)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    context?.startActivity(intent)
                 }
             })
         }

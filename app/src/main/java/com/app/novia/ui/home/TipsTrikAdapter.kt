@@ -10,7 +10,7 @@ import com.app.novia.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class TipsTrikAdapter (val tipsTrikList: ArrayList<TipsTrikModel>) : RecyclerView.Adapter<TipsTrikAdapter.ListViewHolder>() {
+class TipsTrikAdapter (private val tipsTrikList: ArrayList<TipsTrikModel>) : RecyclerView.Adapter<TipsTrikAdapter.ListViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ListViewHolder {
         val view: View =
             LayoutInflater.from(viewGroup.context).inflate(R.layout.item_tips_trik, viewGroup, false)

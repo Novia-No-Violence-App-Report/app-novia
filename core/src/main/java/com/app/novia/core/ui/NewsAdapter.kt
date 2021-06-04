@@ -1,7 +1,6 @@
 package com.app.novia.core.ui
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
