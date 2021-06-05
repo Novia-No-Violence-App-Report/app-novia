@@ -1,5 +1,6 @@
 package com.app.novia.core.data.source.remote
 
+import android.util.Log
 import com.app.novia.core.domain.model.ChatEntity
 import com.app.novia.core.domain.model.NewsResponse
 import com.app.novia.core.domain.model.UserResponseEntity
@@ -12,6 +13,7 @@ import kotlinx.coroutines.flow.flowOn
 
 class RemoteDataSource(private val apiService: ApiService) {
     suspend fun sendChat(message: JsonObject?): Flow<ApiResponse<ChatEntity>> {
+        Log.d("SEENDCHAT", message.toString())
         EspressoIdlingResource.increment()
         return flow {
             try {

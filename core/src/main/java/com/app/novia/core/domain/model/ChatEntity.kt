@@ -13,5 +13,5 @@ data class ChatEntity(
     @field:SerializedName("status_code")
     var statusCode: Int? = 0,
 
-    var timeStamp: String
+    var timeStamp: String = ""
 ) : Serializable
