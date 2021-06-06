@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="10dp">
+    android:paddingBottom="12dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -40,6 +40,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:lineSpacingExtra="-2sp"
                 android:ellipsize="end"
                 android:lines="3"
                 android:text="@string/ayah_penganiaya_anak_kandung_di_tangsel_ditangkap"
@@ -56,6 +57,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/tanggal"
                 android:textSize="11sp"
+                android:textColor="#767676"
                 app:layout_constraintLeft_toLeftOf="@id/viewnews_judul_textview"
                 app:layout_constraintTop_toBottomOf="@id/viewnews_judul_textview" />
 

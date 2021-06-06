@@ -53,9 +53,9 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/contact_row_img"
-            android:layout_width="60dp"
+            android:layout_width="80dp"
             android:layout_height="60dp"
-            android:background="@color/novia_purple"
+            android:background="@drawable/circle_style"
             android:src="@drawable/ic_baseline_person_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -66,10 +66,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="1dp"
             android:text="@string/contact_1"
+            style="@style/Text2"
             android:textColor="@color/novia_purple"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="21sp"
             app:layout_constraintLeft_toRightOf="@id/contact_row_img"
             app:layout_constraintTop_toTopOf="@id/contact_row_img" />
 
@@ -77,13 +78,12 @@
             android:id="@+id/contact_row_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="2dp"
             android:includeFontPadding="false"
             android:text="@string/_081234567890"
             android:textColor="@color/novia_purple"
-            android:textSize="12sp"
-            android:textStyle="bold"
+            android:textSize="15sp"
+            style="@style/Text"
             app:layout_constraintLeft_toLeftOf="@id/contact_row_name"
             app:layout_constraintTop_toBottomOf="@id/contact_row_name" />
     </androidx.constraintlayout.widget.ConstraintLayout>
