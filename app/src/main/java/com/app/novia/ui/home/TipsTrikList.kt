@@ -3,17 +3,17 @@ package com.app.novia.ui.home
 object TipsTrikList {
     private var data = arrayOf(
         arrayOf(
-            "https://www.masakapahariini.com/wp-content/uploads/2018/04/resep-rawon-daging-780x440.jpg",
+            "https://storage.googleapis.com/novia-files/icon_konfrontasi.png",
             "Konfrontasi",
             "Bersikap tegas pada pelaku dan lakukan sesuatu"
         ),
         arrayOf(
-            "https://www.masakapahariini.com/wp-content/uploads/2018/04/resep-rawon-daging-780x440.jpg",
+            "https://storage.googleapis.com/novia-files/icon_lindungi.png",
             "Lindungi diri",
             "Selalu waspada dimana pun Anda berada"
         ),
         arrayOf(
-            "https://www.masakapahariini.com/wp-content/uploads/2018/04/resep-rawon-daging-780x440.jpg",
+            "https://storage.googleapis.com/novia-files/icon_hubungi.png",
             "Hubungi",
             "Keluarga atau kerabat Anda dengan segera"
         )

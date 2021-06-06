@@ -1,6 +1,7 @@
 package com.app.novia.ui.chatbot
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -29,6 +31,7 @@ import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class ChatFragment : Fragment() {
 
@@ -141,7 +144,6 @@ class ChatFragment : Fragment() {
         val currentDate = SimpleDateFormat("hh:mm", Locale.UK).format(Date())
         adapter?.addData(ChatEntity(msg, false, 0, currentDate.toString()))
         adapter?.itemCount?.minus(1)?.let { binding.rvChatbot.scrollToPosition(it) }
-
         val jsonReport = JsonObject()
         jsonReport.addProperty("report", msg)
         jsonReport.addProperty("user_id", user?.uid)
@@ -155,6 +157,9 @@ class ChatFragment : Fragment() {
                             SimpleDateFormat("hh:mm", Locale.UK).format(Date()).toString()
                         adapter?.addData(response.data)
                         adapter?.itemCount?.minus(1)?.let { binding.rvChatbot.scrollToPosition(it) }
+//                        binding.inputChatbot.isEnabled = false
+//                        binding.inputChatbot.hint = "Novia"
+//                        hideSoftKeyboard()
                     }
                     is ApiResponse.Empty -> Log.d("API RESPONSE", "EMPTY")
                     is ApiResponse.Error -> Log.d("API RESPONSE", "ERROR ${response.errorMessage}")
@@ -170,5 +175,17 @@ class ChatFragment : Fragment() {
                 removeObserver(this)
             }
         })
+    }
+
+    private fun hideSoftKeyboard() {
+        val inputMethodManager = activity?.getSystemService(
+            Activity.INPUT_METHOD_SERVICE
+        ) as InputMethodManager
+        if (inputMethodManager.isAcceptingText) {
+            inputMethodManager.hideSoftInputFromWindow(
+                activity?.currentFocus?.windowToken,
+                0
+            )
+        }
     }
 }
