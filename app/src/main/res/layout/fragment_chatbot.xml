@@ -7,7 +7,7 @@
     tools:context=".ui.chatbot.ChatFragment" >
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="3dp"
         android:id="@+id/rv_chatbot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
