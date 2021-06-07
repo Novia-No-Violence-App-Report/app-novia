@@ -3,13 +3,12 @@
 # Novia - No Violence Reporting App
 
 <img src="http://34.101.116.82/image/favicon.png" align="left"
-width="200" hspace="4" vspace="4">
+width="50">
 
 Novia is a friendly reporting app for any inappropriate acts to woman and child.
 <br/>
 It uses chatbot system to collect report from victims or reporters.
 
-<br/><br/><br/><br/><br/><br/>
 ## Screenshots
 
 [<img src="https://storage.googleapis.com/novia-files/screenshots/novia_home.png" align="left"
