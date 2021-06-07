@@ -23,9 +23,9 @@ width="200"
 The android app lets you:
 - Add report using chatbot
 - Get recent news articles about women and children in Indonesia
-- Add emergency contact.
-- Send SOS SMS to your emergency contact.
-- Call emergency agencies in Indonesia (SAPA, Police, Ambulance, Emergency Call)
+- Add any relative contact for the emergency
+- Send SOS text message to your emergency contact
+- Call national emergency agencies
 
 ## Libraries Used
 
