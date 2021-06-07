@@ -1,6 +1,6 @@
 ![CI](https://github.com/Novia-No-Violence-App-Report/app-novia/actions/workflows/file.yml/badge.svg)
 
-# Novia - No Violence Reporting App
+# Novia - No Violence App Report
 
 <img src="http://34.101.116.82/image/favicon.png" align="left"
 width="50">
