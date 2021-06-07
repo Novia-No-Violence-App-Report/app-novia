@@ -20,7 +20,7 @@ width="200"
 
 ## Features
 
-The android app lets you:
+Novia app lets you:
 - Add report using chatbot
 - Get recent news articles about women and children in Indonesia
 - Add any relative contact for the emergency
