@@ -45,6 +45,7 @@ Novia app lets you:
   or
   
   ```git clone https://github.com/Novia-No-Violence-App-Report/novia-app.git```
-- Create your Firebase project and replace `app/google-services.json` file
-- Open the project using latest Android Studio
+  
+- Create your [Firebase](https://console.firebase.google.com) project and replace `app/google-services.json` file
+- Open the project using latest version of Android Studio
 - Run the project
