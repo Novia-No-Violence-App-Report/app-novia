@@ -27,7 +27,7 @@ Novia app lets you:
 - Send SOS text message to your emergency contact
 - Call national emergency agencies
 
-## Libraries Used
+## Libraries used
 
 - [Koin](https://insert-koin.io)
 - [Retrofit](https://square.github.io/retrofit/)
@@ -35,3 +35,16 @@ Novia app lets you:
 - [Room](https://developer.android.com/jetpack/androidx/releases/room?hl=id)
 - [Glide](https://github.com/bumptech/glide)
 - and many more ...
+
+## How to replicate
+
+- Clone this project
+  
+  ```git clone git@github.com:Novia-No-Violence-App-Report/novia-app.git```
+  
+  or
+  
+  ```git clone https://github.com/Novia-No-Violence-App-Report/novia-app.git```
+- Create your Firebase project and replace `app/google-services.json` file
+- Open the project using latest Android Studio
+- Run the project
